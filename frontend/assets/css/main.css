@@ -2508,3 +2508,13 @@ payment-tb {
 .payment-td:last-child {
   border-right: 0px;
 }
+
+.breadcrumbs d-flex align-items-center {
+  background-color: #1b2f45;
+}
+
+.donation-info {
+  font-size: 25px;
+  text-decoration: overline;
+  text-decoration-color: #1b2f45;
+}
