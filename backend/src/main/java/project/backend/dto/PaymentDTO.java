@@ -1,7 +1,7 @@
 package project.backend.dto;
 
 import lombok.*;
-import project.backend.domain.PaymentEntity;
+import project.backend.domain.Payment;
 
 import java.util.UUID;
 
@@ -24,8 +24,8 @@ public class PaymentDTO {
 
     private String customerFailUrl;
 
-    public PaymentEntity toEntity() {
-        return PaymentEntity.builder()
+    public Payment toEntity() {
+        return Payment.builder()
                 .paymentType((paymentType))
                 .amount(amount)
                 .orderName(orderName)

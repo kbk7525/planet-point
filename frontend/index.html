@@ -29,7 +29,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
 
-
   <!-- 글꼴 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +45,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 
 <body class="page-index">
@@ -89,7 +91,12 @@
           </li>
           <li><a href="contact.html">후원하기</a></li>
         </ul>
-        <li><img class="naver_btn" src="./assets/img/btnD_아이콘원형.png" alt=""></li>
+        <li>
+          <button type="button" class="naver_login">
+            <div id="naver_id_login"></div>
+            <!--<img class="naver_btn" src="./assets/img/btnD_아이콘원형.png" alt="" id="naver_id_login">-->
+          </button>
+        </li>
       </nav><!-- .navbar -->
 
     </div>
@@ -439,6 +446,15 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!--naver login-->
+  <script>
+      let naver_id_login1 = new naver_id_login("RVvWO7R3QM1UnNRS0fnv", "http://127.0.0.1:8080/callback.html");
+      let state = naver_id_login1.getUniqState();
+      naver_id_login1.setButton("green", 1,40);
+      naver_id_login1.setDomain("http://127.0.0.1:8080/index.html");
+      naver_id_login1.setState(state);
+      naver_id_login1.setPopup();
+      naver_id_login1.init_naver_id_login();
+  </script>
 </body>
-
 </html>

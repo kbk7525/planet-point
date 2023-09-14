@@ -5,14 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import project.backend.dto.PaymentDTO;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaymentEntity extends BaseEntity {
+public class Payment extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +33,5 @@ public class PaymentEntity extends BaseEntity {
     private String orderId;
 
     private boolean paySuccessYN;
-
-    public PaymentDTO toPay
 
 }
