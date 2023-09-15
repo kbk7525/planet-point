@@ -263,10 +263,3 @@ function autoHypenPhone(str) {
   }
   return str;
 }
-
-var cellPhone = document.getElementById("cellPhone");
-cellPhone.onkeyup = function (event) {
-  event = event || window.event;
-  var _val = this.value.trim();
-  this.value = autoHypenPhone(_val);
-};
