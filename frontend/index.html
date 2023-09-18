@@ -46,7 +46,8 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+    charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 
@@ -69,8 +70,7 @@
         <ul>
           <li><a href="index.html" class="active">메인페이지</a></li>
           <li><a href="team.html">마이페이지</a></li>
-          <li class="dropdown"><a href="#"><span>기부하기</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>기부하기</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">기부하기</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
@@ -112,7 +112,7 @@
             </p>
           </blockquote>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Get Started</a>
+            <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
             <a href="https://www.youtube.com/watch?v=e6rglsLy1Ys&ab_channel=NationalGeographic"
               class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
                 Video</span></a>
@@ -135,11 +135,10 @@
         </div>
 
         <div class="why-us-img1">
-          <img class="why-us-img2" src="./assets/img/img1.jpg" alt="">
-          <img class="why-us-img3" src="./assets/img/img2.jpg" alt="">
-          <img class="why-us-img4" src="./assets/img/img3.jpg" alt="">
-          <img class="why-us-img5" src="./assets/img/img4.jpg" alt="">
-          <img class="why-us-img6" src="./assets/img/img5.jpg" alt="">
+          <img class="why-us-img2" src="./assets/img/기후 이벤트의 증가.png" alt="">
+          <img class="why-us-img3" src="./assets/img/바다 수면 상승.png" alt="">
+          <img class="why-us-img4" src="./assets/img/생태계 변화.png" alt="">
+          <img class="why-us-img5" src="./assets/img/식량 안보 위협.png" alt="">
         </div>
     </section><!-- End Why Choose Us Section -->
 
@@ -257,18 +256,12 @@
           <div class="row">
             <div class="col-md-6">
               <h4>NASA 보고: <br>30년 동안 해수면 상승의 압도적인 증가</h4>
-              <p> 미국 항공우주국(NASA)은 최근 30년 동안의 세계 해수면 상승 추세를 시각화한 애니메이션을 공개했습니다.
-
-              <p> 1993년부터 현재까지, 해양 과학자들은 전 세계 평균 해수면이 9.8cm 상승했다고 보고했습니다.</p>
-
-              더욱 주목할 만한 것은 해수면 상승 속도의 변화입니다. 나사(NASA)의 연구에 따르면, 20세기 동안 지구의 평균 해수면은 연평균 약 1.5mm씩 상승했습니다. 그러나 1990년대
-              초반부터 해수면 상승 속도가 빨라지기 시작하여, 1990년대 후반부터는 연평균 2.5mm, 그리고 2010년대 이후에는 놀랍게도 연평균 3.9mm로 상승세를 지속하고 있습니다.
+              <p>NASA는 최근 30년 동안의 세계 해수면 상승 추세를 시각화한 애니메이션을 공개했습니다.</p>
+              <p>NASA의 데이터에 따르면, 1993년부터 지금까지 전 세계 평균 해수면이 9.8cm 상승하며, 특히 2010년대 이후 연평균 상승 속도가 3.9mm로 늘어나는 등 지구 온난화에 따른
+                심각한 변화를 보여주고 있습니다.</p>
 
 
 
-
-
-              </p>
               <a href="https://svs.gsfc.nasa.gov/5114" class="btn-get-started">Get Started</a>
             </div>
           </div>
@@ -447,13 +440,14 @@
 
   <!--naver login-->
   <script>
-      let naver_id_login1 = new naver_id_login("RVvWO7R3QM1UnNRS0fnv", "http://127.0.0.1:8080/callback.html");
-      let state = naver_id_login1.getUniqState();
-      naver_id_login1.setButton("green", 1,40);
-      naver_id_login1.setDomain("http://127.0.0.1:8080/index.html");
-      naver_id_login1.setState(state);
-      naver_id_login1.setPopup();
-      naver_id_login1.init_naver_id_login();
+    let naver_id_login1 = new naver_id_login("RVvWO7R3QM1UnNRS0fnv", "http://127.0.0.1:8080/callback.html");
+    let state = naver_id_login1.getUniqState();
+    naver_id_login1.setButton("green", 1, 40);
+    naver_id_login1.setDomain("http://127.0.0.1:8080/index.html");
+    naver_id_login1.setState(state);
+    naver_id_login1.setPopup();
+    naver_id_login1.init_naver_id_login();
   </script>
 </body>
+
 </html>

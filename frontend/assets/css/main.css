@@ -508,7 +508,7 @@ section {
     position: absolute;
     content: "";
     width: 40%;
-    background: var(--color-secondary);
+    /* background: var(--color-secondary); */
     top: 0;
     bottom: 0;
   }
@@ -730,7 +730,6 @@ padding: 100px 0; */
   max-width: 100%; /*최대 가로 크기도 100%로 설정합니다. */
   height: auto; /* 원래 가로 세로 비율을 유지하도록 합니다. */
   margin-bottom: 10px; /* 이미지 아래의 간격을 설정합니다. */
-  object-fit: fill;
 }
 /* 이미지에 min-height를 적용합니다. */
 .why-us-img1 img,
@@ -739,8 +738,8 @@ padding: 100px 0; */
 .why-us-img4 img,
 .why-us-img5 img,
 .why-us-img6 img {
-  max-height: 100vh;
-  min-height: 100vh;
+  max-height: 125vh;
+  min-height: 125vh;
   width: auto;
 }
 
@@ -2559,5 +2558,7 @@ payment-tb {
 
 .naver_login {
   border: 0;
-  background-color:transparent;
+  background-color: transparent;
 }
+
+/* 마이페이지 */
