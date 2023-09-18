@@ -508,7 +508,7 @@ section {
     position: absolute;
     content: "";
     width: 40%;
-    background: var(--color-secondary);
+    /* background: var(--color-secondary); */
     top: 0;
     bottom: 0;
   }
