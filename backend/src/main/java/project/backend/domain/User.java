@@ -1,32 +1,55 @@
 package project.backend.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import static lombok.AccessLevel.PROTECTED;
 
 @Entity
-@Getter
 @Builder
-@NoArgsConstructor
+@NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor
+@Table(name = "oauth_member",
+        uniqueConstraints = {
+            @UniqueConstraint(
+                    name = "oauth_id_unique",
+                    columnNames = {
+                            "oauth_server_id",
+                            "oauth_server"
+                    }
+            ),
+        }
+)
 public class User {
 
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private String userId;
+    @Embedded
+    private OauthId oauthId;
+    private String userName;
+    private String email;
+    private String mobile;
 
-    @Column
-    private String userEmail;
+    public Long id() {
+        return id;
+    }
 
-    @Column
-    private String name;
+    public OauthId oauthId() {
+        return oauthId;
+    }
 
-    @Column
-    private String phone;
+    public String userName() {
+        return userName;
+    }
+
+    public String email() {
+        return email;
+    }
+
+    public String mobile() {
+        return mobile;
+    }
+
 }

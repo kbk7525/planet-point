@@ -20,3 +20,10 @@ payment:
     fail_url: "http://localhost:8080/api/v1/payments/toss/fail"
 server:
   port: 8081
+
+oauth:
+  naver:
+    clinet_id: RVvWO7R3QM1UnNRS0fnv
+    redirect_uri: "http://localhost:8080/oauth/redirected/naver"
+    client_secret: fqXwPVg6rW
+    scope: name, email, mobile
