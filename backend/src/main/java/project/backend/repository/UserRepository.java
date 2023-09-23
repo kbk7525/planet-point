@@ -1,11 +1,12 @@
 package project.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import project.backend.domain.OauthId;
+import org.springframework.stereotype.Repository;
 import project.backend.domain.User;
 
-import java.util.Optional;
-
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByOauthId(OauthId oauthId);
+    User findByEmail(String email);
+    
+    User findByUid(String Uid);
 }

@@ -23,7 +23,7 @@ server:
 
 oauth:
   naver:
-    clinet_id: RVvWO7R3QM1UnNRS0fnv
-    redirect_uri: "http://localhost:8080/oauth/redirected/naver"
-    client_secret: fqXwPVg6rW
+    client_id: "RVvWO7R3QM1UnNRS0fnv"
+    redirect_uri: "http://127.0.0.1:8080/oauth/redirected/naver"
+    client_secret: "fqXwPVg6rW"
     scope: name, email, mobile

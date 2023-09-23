@@ -46,8 +46,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-    charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 
@@ -89,17 +87,17 @@
             </ul>
           </li>
           <li><a href="contact.html">후원하기</a></li>
+          <li>
+            <!--네이버 로그인 버튼-->
+            <div id="naverIdLogin"></div>
+              <!--<img class="naver_btn" src="./assets/img/btnD_아이콘원형.png" alt="" id="naver_id_login">-->
+          </li>
         </ul>
-        <li>
-          <button type="button" class="naver_login">
-            <div id="naver_id_login"></div>
-            <!--<img class="naver_btn" src="./assets/img/btnD_아이콘원형.png" alt="" id="naver_id_login">-->
-          </button>
-        </li>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
+
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
@@ -432,17 +430,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
   <!--naver login-->
-  <script>
-    let naver_id_login1 = new naver_id_login("RVvWO7R3QM1UnNRS0fnv", "http://127.0.0.1:8080/callback.html");
-    let state = naver_id_login1.getUniqState();
-    naver_id_login1.setButton("green", 1, 40);
-    naver_id_login1.setDomain("http://127.0.0.1:8080/index.html");
-    naver_id_login1.setState(state);
-    naver_id_login1.setPopup();
-    naver_id_login1.init_naver_id_login();
-  </script>
+  <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+  <script src="js/login.js"></script>
 </body>
-
 </html>
