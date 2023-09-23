@@ -22,7 +22,7 @@ public class UserController {
             return ResponseEntity.ok("로그인 성공");
         }
         else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 회원가입 된 이메일입니다");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 회원가입 된 이메일입니다.");
         }
     }
 }

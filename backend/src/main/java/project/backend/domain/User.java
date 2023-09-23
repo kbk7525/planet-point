@@ -28,4 +28,5 @@ public class User {
 
     @Column
     private int seed;
+
 }

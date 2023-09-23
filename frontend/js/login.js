@@ -6,7 +6,6 @@ let naverLogin = new naver.LoginWithNaverId(
     loginButton: {color: "green", type: 2, height: 30}
   }
 );
-
 naverLogin.init();
 window.addEventListener('load', function() {
     naverLogin.getLoginStatus(function(status) {
