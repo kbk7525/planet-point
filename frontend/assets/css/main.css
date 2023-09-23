@@ -1023,81 +1023,37 @@ padding: 100px 0; */
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.team .team-member {
-  overflow: hidden;
-  background: #fff;
-}
-
-.team .team-member .member-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.team .team-member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  background: rgba(255, 255, 255, 0.85);
+.my-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row; /* 요소들을 세로로 배치합니다. */
+  align-items: flex-start; /* 세로 정렬을 해제하고 왼쪽 정렬로 변경합니다. */
+  justify-content: flex-start; /* 세로 정렬을 해제하고 위쪽 정렬로 변경합니다. */
+  height: 50vh;
 }
 
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: #31547c;
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.my-image {
+  margin-left: 150px;
+  max-width: 25%;
+  height: auto;
+  margin-bottom: 10px; /* 이미지와 텍스트 사이 여백을 조절합니다. */
 }
 
-.team .team-member .social a i {
-  line-height: 0;
-}
-
-.team .team-member .social a:hover {
-  color: var(--color-primary);
-}
-
-.team .team-member .social i {
+.my-text {
+  margin-left: 20px;
   font-size: 18px;
-  margin: 0 2px;
+  padding: 10px; /* 텍스트 내부 여백을 조절합니다. */
+  
+  flex-direction: row;
+  align-self: center;
 }
 
-.team .team-member .member-info {
-  padding: 25px 15px 0 15px;
-  text-align: center;
+hr {
+  background-color: green;
+  height: 3px;
+  border: 0;
+  margin: 5px 0; /* 위 아래 여백을 줄입니다. */
 }
 
-.team .team-member .member-info h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: var(--color-secondary);
-}
-
-.team .team-member .member-info span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: #6c757d;
-}
-
-.team .team-member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
-  color: #6c757d;
-}
-
-.team .team-member:hover .social {
-  opacity: 1;
-}
 
 /*--------------------------------------------------------------
 # Services Cards Section
@@ -2563,3 +2519,6 @@ payment-tb {
 }
 
 /* 마이페이지 */
+hr{
+  
+}
