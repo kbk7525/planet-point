@@ -1023,37 +1023,106 @@ padding: 100px 0; */
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.my-container {
-  display: flex;
-  flex-direction: row; /* 요소들을 세로로 배치합니다. */
-  align-items: flex-start; /* 세로 정렬을 해제하고 왼쪽 정렬로 변경합니다. */
-  justify-content: flex-start; /* 세로 정렬을 해제하고 위쪽 정렬로 변경합니다. */
-  height: 50vh;
+.myimg{
+  width: 100%;
+}
+.login {
+    height: 650px;
+    width: 100%;
+    background: white;
+    position: relative;
+}
+.login_box {
+    width: 1050px;
+    height: 600px;
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    box-shadow: 1px 4px 22px -8px #0004;
+    display: flex;
+    overflow: hidden;
+}
+.login_box .left{
+  width: 59%;
+  height: 100%;
+}
+.login_box .right{
+  width: 41%;
+  height: 100%  
 }
 
-.my-image {
-  margin-left: 150px;
-  max-width: 25%;
-  height: auto;
-  margin-bottom: 10px; /* 이미지와 텍스트 사이 여백을 조절합니다. */
+.left .contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+.left h3{
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 50px;
+  color: black;
+}
+.left input {
+    border: none;
+    width: 80%; 
+    margin: 15px 0px;
+    border-bottom: 4px solid #2CEE95;
+    padding: 7px 9px;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    font-weight: 1000;
+    font-size: 20px;
+}
+.left input::placeholder{
+  font-weight: bold;
+  color: black;
 }
 
-.my-text {
-  margin-left: 20px;
-  font-size: 18px;
-  padding: 10px; /* 텍스트 내부 여백을 조절합니다. */
-  
-  flex-direction: row;
-  align-self: center;
+
+.right {
+  background: #2CEE95;
+  color: #fff;
+  position: relative;
 }
 
-hr {
-  background-color: green;
-  height: 3px;
-  border: 0;
-  margin: 5px 0; /* 위 아래 여백을 줄입니다. */
+.right .right-text{
+  height: 100%;
+  position: relative;
+  transform: translate(0%, 45%);
+}
+.right-text h2{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
 }
 
+
+.right .right-inductor{
+  position: absolute;
+  width: 70px;
+  height: 7px;
+  background: #fff0;
+  left: 50%;
+  bottom: 70px;
+  transform: translate(-50%, 0%);
+}
+
+.doimg{
+  width: 300px;
+  height: 380px;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 50px;
+}
 
 /*--------------------------------------------------------------
 # Services Cards Section
