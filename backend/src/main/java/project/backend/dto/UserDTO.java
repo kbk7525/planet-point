@@ -1,6 +1,5 @@
 package project.backend.dto;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 @Builder
