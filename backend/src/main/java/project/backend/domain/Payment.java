@@ -1,10 +1,8 @@
 package project.backend.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import project.backend.dto.PaymentResDTO;
 
 @Entity
 @Getter
@@ -18,20 +16,39 @@ public class Payment extends BaseEntity {
     private Long paymentId;
 
     @Column
-    private String paymentType;
-
-    @Column
-    private String paymentKey;
+    private String payType;
 
     @Column
     private Long amount;
 
     @Column
+    private String orderId;
+
+    @Column
     private String orderName;
 
     @Column
-    private String orderId;
+    private String userName;
 
-    private boolean paySuccessYN;
+    @Column
+    private String userEmail;
 
+    @Column
+    private String createDate;
+
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private User user;
+
+    public PaymentResDTO toDTO() {
+        return PaymentResDTO.builder()
+                .payType(payType)
+                .amount(amount)
+                .orderId(orderId)
+                .orderName(orderName)
+                .userName(userName)
+                .userEmail(userEmail)
+                .createDate(createDate)
+                .build();
+    }
 }

@@ -14,8 +14,8 @@ spring:
 
 payment:
   toss:
-    test_client_key: test_ck_6BYq7GWPVv5DRddeYNn3NE5vbo1d
-    test_secret_key: test_sk_eqRGgYO1r5qOd0v64nWrQnN2Eyaz
+    test_client_key: "test_ck_6BYq7GWPVv5DRddeYNn3NE5vbo1d"
+    test_secret_key: "test_sk_eqRGgYO1r5qOd0v64nWrQnN2Eyaz"
     success_url: "http://localhost:8080/api/v1/payments/toss/success"
     fail_url: "http://localhost:8080/api/v1/payments/toss/fail"
 server:

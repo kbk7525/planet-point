@@ -7,6 +7,9 @@ let naverLogin = new naver.LoginWithNaverId(
   }
 );
 naverLogin.init();
+
+let closing_window = false;
+
 window.addEventListener('load', function() {
     naverLogin.getLoginStatus(function(status) {
         if(status) {
@@ -30,7 +33,7 @@ window.addEventListener('load', function() {
         })
             .then(response => response.text())
             .then(result => {
-                if (result === 'ok') {
+                if (result === 200) {
                     alert('성공');
                     window.location.replace('http://127.0.0.1:8080');
                 }
