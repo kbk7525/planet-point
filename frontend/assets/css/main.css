@@ -1023,81 +1023,80 @@ padding: 100px 0; */
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.myimg{
+.myimg {
   width: 100%;
 }
 .login {
-    height: 650px;
-    width: 100%;
-    background: white;
-    position: relative;
+  height: 650px;
+  width: 100%;
+  background: white;
+  position: relative;
 }
 .login_box {
-    width: 1050px;
-    height: 600px;
-    position: absolute;
-    top : 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 5px;
-    box-shadow: 1px 4px 22px -8px #0004;
-    display: flex;
-    overflow: hidden;
+  width: 1050px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 1px 4px 22px -8px #0004;
+  display: flex;
+  overflow: hidden;
 }
-.login_box .left{
+.login_box .left {
   width: 59%;
   height: 100%;
 }
-.login_box .right{
+.login_box .right {
   width: 41%;
-  height: 100%  
+  height: 100%;
 }
 
-.left .contact{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    height: 100%;
-    width: 100%;
-    margin: auto;
+.left .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
 }
-.left h3{
+.left h3 {
   text-align: center;
   margin-bottom: 40px;
   font-size: 50px;
   color: black;
 }
 .left input {
-    border: none;
-    width: 80%; 
-    margin: 15px 0px;
-    border-bottom: 4px solid #2CEE95;
-    padding: 7px 9px;
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    font-weight: 1000;
-    font-size: 20px;
+  border: none;
+  width: 80%;
+  margin: 15px 0px;
+  border-bottom: 4px solid #2cee95;
+  padding: 7px 9px;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-weight: 1000;
+  font-size: 20px;
 }
-.left input::placeholder{
+.left input::placeholder {
   font-weight: bold;
   color: black;
 }
 
-
 .right {
-  background: #2CEE95;
+  background: #2cee95;
   color: #fff;
   position: relative;
 }
 
-.right .right-text{
+.right .right-text {
   height: 100%;
   position: relative;
   transform: translate(0%, 45%);
 }
-.right-text h2{
+.right-text h2 {
   display: block;
   width: 100%;
   text-align: center;
@@ -1105,8 +1104,7 @@ padding: 100px 0; */
   font-weight: 500;
 }
 
-
-.right .right-inductor{
+.right .right-inductor {
   position: absolute;
   width: 70px;
   height: 7px;
@@ -1116,7 +1114,7 @@ padding: 100px 0; */
   transform: translate(-50%, 0%);
 }
 
-.doimg{
+.doimg {
   width: 300px;
   height: 380px;
   text-align: center;
@@ -2587,7 +2585,59 @@ payment-tb {
   background-color: transparent;
 }
 
-/* 마이페이지 */
-hr{
-  
+/* donation page */
+.donation-img-container {
+  display: flex; /* 이미지를 가로로 나란히 배치하기 위해 flex 사용 */
+  flex-wrap: wrap; /* 이미지가 한 줄에 맞지 않으면 다음 줄로 넘어가도록 설정 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+.donation-img {
+  width: 50%; /* 이미지를 절반씩 차지하도록 설정 */
+  /* height: auto; 높이를 자동으로 조정하여 원래 비율 유지 */
+  height: 500px;
+}
+
+.seed_explanation {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+.arrow_box {
+  display: none;
+  position: absolute;
+  width: 500px;
+  padding: 8px;
+  left: 512px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.arrow_box:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+
+span:hover + p.arrow_box {
+  display: block;
 }
