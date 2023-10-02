@@ -2594,11 +2594,18 @@ payment-tb {
 }
 
 .donation-img {
-  width: 50%; /* 이미지를 절반씩 차지하도록 설정 */
+  width: 640px; /* 이미지를 절반씩 차지하도록 설정 */
   /* height: auto; 높이를 자동으로 조정하여 원래 비율 유지 */
   height: 500px;
+  position: relative;
 }
 
+.donation-progress {
+  position: absolute;
+  top: 450px;
+  left: 50px;
+  /* z-index: 1; */
+}
 .seed_explanation {
   display: flex;
   flex-wrap: wrap;
@@ -2640,4 +2647,22 @@ payment-tb {
 
 span:hover + p.arrow_box {
   display: block;
+}
+
+.donation-progress {
+  appearance: none;
+  width: 30%;
+}
+
+.donation-progress::-webkit-progress-bar {
+  background: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 10px #ccc;
+}
+
+.donation-progress::-webkit-progress-value {
+  border-radius: 10px;
+  background: #1d976c;
+  background: -webkit-linear-gradient(to right, #93f9b9, #1d976c);
+  background: linear-gradient(to right, #93f9b9, #1d976c);
 }
