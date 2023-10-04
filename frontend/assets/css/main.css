@@ -2602,8 +2602,8 @@ payment-tb {
 
 .donation-progress {
   position: absolute;
-  top: 450px;
-  left: 50px;
+  top: 400px;
+  left: 40px;
   /* z-index: 1; */
 }
 .seed_explanation {
@@ -2665,4 +2665,28 @@ span:hover + p.arrow_box {
   background: #1d976c;
   background: -webkit-linear-gradient(to right, #93f9b9, #1d976c);
   background: linear-gradient(to right, #93f9b9, #1d976c);
+}
+
+/* 스타일을 적용하고자 하는 .we_value 요소를 선택합니다. */
+/* 스타일을 적용하고자 하는 .we_value 요소를 선택합니다. */
+/* 스타일을 적용하고자 하는 .we_value 요소를 선택합니다. */
+/* 이미지 슬라이더 컨테이너에 스타일을 적용합니다. */
+/* Swiper 컨테이너 스타일 설정 */
+.swiper-container {
+  width: 100%;
+  max-height: 50%;
+  /* min-height: 0vh; */
+  min-width: 100vh;
+  max-width: 100%; /*최대 가로 크기도 100%로 설정합니다. */
+  height: auto; /* 원래 가로 세로 비율을 유지하도록 합니다. */
+  margin-bottom: 10px; /* 이미지 아래의 간격을 설정합니다. */
+}
+
+/* 이미지 슬라이더 스타일 설정 */
+.swiper-slide img {
+  max-height: 100vh;
+  min-height: 60vh;
+
+  width: auto;
+  object-fit: cover;
 }
