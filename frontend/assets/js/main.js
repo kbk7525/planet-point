@@ -263,3 +263,13 @@ function autoHypenPhone(str) {
   }
   return str;
 }
+
+var swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1, // 한 번에 보여지는 슬라이드 개수
+  spaceBetween: 0, // 슬라이드 간격
+  loopAdditionalSlides: 1,
+  loop: true, // 무한 루프
+  autoplay: {
+    delay: 3000, // 3초마다 슬라이드 전환
+  },
+});
