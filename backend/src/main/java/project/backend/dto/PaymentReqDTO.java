@@ -1,9 +1,6 @@
 package project.backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import project.backend.config.DateConfig;
 import project.backend.domain.Payment;
 
@@ -33,7 +30,8 @@ public class PaymentReqDTO {
                 .orderName(orderName)
                 .userEmail(userEmail)
                 .userName(userName)
-                .createDate(String.valueOf(new DateConfig().getNowDate()))
+                .paySuccessYn("N")
+                .createDate(new DateConfig().getNowDate())
                 .build();
     }
 }

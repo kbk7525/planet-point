@@ -2,6 +2,7 @@ package project.backend.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import project.backend.dto.PaymentDTO;
 import project.backend.dto.PaymentResDTO;
 
 @Entity
@@ -9,7 +10,7 @@ import project.backend.dto.PaymentResDTO;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Payment extends BaseEntity {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,13 +20,21 @@ public class Payment extends BaseEntity {
     private String payType;
 
     @Column
-    private Long amount;
+    private Long amount; //결제금액
 
     @Column
-    private String orderId;
+    @Setter
+    private String cardCompany; //카드회사
 
     @Column
-    private String orderName;
+    @Setter
+    private String cardNumber; //카드번호
+
+    @Column
+    private String orderId; //주문고유번호
+
+    @Column
+    private String orderName; //상품명
 
     @Column
     private String userName;
@@ -34,20 +43,44 @@ public class Payment extends BaseEntity {
     private String userEmail;
 
     @Column
+    @Setter
+    private String paymentKey;
+
+    @Column
+    @Setter
+    private String paySuccessYn;
+
+    @Column
     private String createDate;
 
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private User user;
 
-    public PaymentResDTO toDTO() {
+    public PaymentResDTO toRes() {
         return PaymentResDTO.builder()
                 .payType(payType)
+                .paySuccessYn(paySuccessYn)
                 .amount(amount)
+                .orderId(orderId)
+                .userName(userName)
+                .userEmail(userEmail)
+                .createDate(createDate)
+                .build();
+    }
+    public PaymentDTO toDTO() {
+        return PaymentDTO.builder()
+                .paymentId(paymentId)
+                .payType(payType)
+                .amount(amount)
+                .cardCompany(cardCompany)
+                .cardNumber(cardNumber)
                 .orderId(orderId)
                 .orderName(orderName)
                 .userName(userName)
                 .userEmail(userEmail)
+                .paymentKey(paymentKey)
+                .paySuccessYn(paySuccessYn)
                 .createDate(createDate)
                 .build();
     }

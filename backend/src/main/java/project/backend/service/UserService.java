@@ -6,6 +6,8 @@ import project.backend.domain.User;
 import project.backend.dto.UserDTO;
 import project.backend.repository.UserRepository;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -13,8 +15,8 @@ public class UserService {
     private final UserRepository userRepository;
 
     public User createUser(UserDTO userDTO) {
-        User existUser = userRepository.findByEmail(userDTO.getEmail());
-        if(existUser == null) {
+        Optional<User> existUser = userRepository.findByEmail(userDTO.getEmail());
+        if(existUser.isEmpty()) {
             User newUser = User.builder()
                     .id(userDTO.getId())
                     .uid(userDTO.getUid())

@@ -1,11 +1,15 @@
 package project.backend.config;
 
 import lombok.Data;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
-@Data
+@Configuration
 public class DateConfig {
-
-    private LocalDateTime nowDate;
+    public String getNowDate() {
+        return LocalDateTime.now(ZoneId.of("Asia/Seoul")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+    }
 }
