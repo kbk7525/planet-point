@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/data?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: 1234
+    password: 12345678
   jpa:
     show-sql: true
     hibernate:
@@ -18,6 +18,8 @@ payment:
     test_secret_key: "test_sk_eqRGgYO1r5qOd0v64nWrQnN2Eyaz"
     success_url: "http://localhost:8080/api/v1/payments/toss/success"
     fail_url: "http://localhost:8080/api/v1/payments/toss/fail"
+    origin_url: "https://api.tosspayments.com/v1"
+
 server:
   port: 8081
 

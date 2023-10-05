@@ -3,6 +3,9 @@ package project.backend.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Builder
 @NoArgsConstructor
@@ -29,4 +32,12 @@ public class User {
     @Column
     private int seed;
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @Builder.Default
+    private List<Payment> payments = new ArrayList<>();
+
+    public void addPayment(Payment payment) {
+        this.payments.add(payment);
+        payment.setUser(this);
+    }
 }
