@@ -148,18 +148,10 @@
                 <tr>
                   <th>후원금액</th>
                   <td class="button-1">
-                    <button type="button" class="price">10,000원</button>
-
-
-                    <button type="button" class="price">30,000원</button>
-
-
-
-
-                    <button type="button" class="price selected">50,000원</button>
-
-
-                    <button type="button" class="price">100,000원</button>
+                    <button type="button" class="price" id="amount">10,000원</button>
+                    <button type="button" class="price" id="amount">30,000원</button>
+                    <button type="button" class="price" id="amount">50,000원</button>
+                    <button type="button" class="price" id="amount">100,000원</button>
                   </td>
                 </tr>
               </table>
@@ -171,16 +163,16 @@
               <table>
                 <tr>
                   <th class="bi-th">이름</th>
-                  <td> <input type="text" name="name" maxlength="12" size="20">
+                  <td> <input type="text" name="name" maxlength="12" size="20" required>
                 </tr>
                 <tr>
                   <th>휴대폰번호</th>
-                  <td> <input type="text" name="cellPhone" id="cellPhone" maxlength="13" />
+                  <td> <input type="text" name="mobile" id="mobile" maxlength="13" required>
                   </td>
                 </tr>
                 <tr>
                   <th>이메일</th>
-                  <td> <input type="email" name="Email" id="email" maxlength="20" size="20">
+                  <td> <input type="email" name="email" id="email" maxlength="20" size="20" required>
                   </td>
                 </tr>
               </table>
@@ -286,7 +278,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="js/payment.js"></script>
 </body>
 
 </html>

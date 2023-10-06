@@ -48,7 +48,11 @@ public class Payment {
 
     @Column
     @Setter
-    private String paySuccessYn;
+    private String paySuccessYn; //결제 성공 여부
+
+    @Column
+    @Setter
+    private String payFailReason; //결제 실패 이유
 
     @Column
     private String createDate;
@@ -81,6 +85,7 @@ public class Payment {
                 .userEmail(userEmail)
                 .paymentKey(paymentKey)
                 .paySuccessYn(paySuccessYn)
+                .payFailReason(payFailReason)
                 .createDate(createDate)
                 .build();
     }

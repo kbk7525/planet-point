@@ -21,6 +21,8 @@ import project.backend.repository.UserRepository;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -128,5 +130,28 @@ public class PaymentService {
                     });
         }
         return payResDTO;
+    }
+
+    @Transactional
+    public PaymentResHandleFailDTO requestFail(String errorCode, String errorMsg, String orderId) {
+        Payment payment = paymentRepository.findByOrderId(orderId)
+                .orElseThrow(() -> new BusinessException(ExMessage.PAYMENT_ERROR_ORDER_NOTFOUND));
+        payment.setPaySuccessYn("N");
+        payment.setPayFailReason(errorMsg);
+        return PaymentResHandleFailDTO.builder()
+                .orderId(orderId)
+                .errorCode(errorCode)
+                .errorMsg(errorMsg)
+                .build();
+    }
+
+    @Transactional(readOnly = true)
+    public List<PaymentDTO> getAllPayments(String userEmail) {
+        String email = userRepository.findByEmail(userEmail)
+                .orElseThrow(()-> new BusinessException(ExMessage.MEMBER_ERROR_NOT_FOUND))
+                .getEmail();
+        return paymentRepository.findAllByUserEmail(email)
+                .stream().map(Payment::toDTO)
+                .collect(Collectors.toList());
     }
 }
