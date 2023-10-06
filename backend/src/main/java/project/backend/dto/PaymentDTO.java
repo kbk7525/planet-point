@@ -18,5 +18,6 @@ public class PaymentDTO {
     private String userEmail;
     private String paymentKey;
     private String paySuccessYn;
+    private String payFailReason;
     private String createDate;
 }
