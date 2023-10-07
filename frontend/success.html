@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 
 <html lang="en">
 
@@ -105,4 +105,31 @@
 
 </body>
 
+</html> 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>결제 성공</title>
+</head>
+<body>
+    <h1>결제가 성공적으로 완료되었습니다.</h1>
+    <p id="paymentDetails"></p>
+
+    <script>
+        let url = "http://127.0.0.1:8081/v1/api/payments/success?";
+        const currentURL = new URL(window.location.href);
+        const searchParams = new URLSearchParams(currentURL.search);
+        url += searchParams;
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('paymentDetails').textContent = data;
+            })
+            .catch(error => {
+                console.error('GET 요청 오류:', error);
+            });
+    </script>
+</body>
 </html>

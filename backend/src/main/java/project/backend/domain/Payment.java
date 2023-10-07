@@ -24,7 +24,7 @@ public class Payment {
 
     @Column
     @Setter
-    private String cardCompany; //카드회사
+    private String issuerCode; //카드 발급사 코드
 
     @Column
     @Setter
@@ -67,6 +67,7 @@ public class Payment {
                 .paySuccessYn(paySuccessYn)
                 .amount(amount)
                 .orderId(orderId)
+                .orderName(orderName)
                 .userName(userName)
                 .userEmail(userEmail)
                 .createDate(createDate)
@@ -77,7 +78,7 @@ public class Payment {
                 .paymentId(paymentId)
                 .payType(payType)
                 .amount(amount)
-                .cardCompany(cardCompany)
+                .cardCompany(issuerCode)
                 .cardNumber(cardNumber)
                 .orderId(orderId)
                 .orderName(orderName)
