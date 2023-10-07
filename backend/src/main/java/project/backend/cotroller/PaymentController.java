@@ -35,9 +35,9 @@ public class PaymentController {
             @RequestParam Long amount
     ) {
         try {
+
             paymentService.verifyRequest(paymentKey, orderId, amount);
             PaymentResHandleDTO result = paymentService.requestFinalPayment(paymentKey, orderId, amount);
-
             return responseService.getSingleResult(result);
         } catch (Exception e) {
             e.getStackTrace();

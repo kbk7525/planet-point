@@ -91,7 +91,7 @@ public class PaymentService {
     public PaymentResHandleDTO requestFinalPayment(String paymentKey, String orderId, Long amount) {
         Payment pay = paymentRepository.findByPaymentKey(paymentKey)
                 .orElseThrow(() -> new BusinessException((ExMessage.PAYMENT_ERROR_ORDER_NOTFOUND)));
-        String payType = "카드";
+        String payType = pay.getPayType();
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         String encodedAuth = new String(Base64.getEncoder().encode((testSecretKey + ":").getBytes(StandardCharsets.UTF_8)));
@@ -99,12 +99,13 @@ public class PaymentService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         JSONObject param = new JSONObject();
+        param.put("paymentKey", paymentKey);
         param.put("orderId", orderId);
         param.put("amount", amount);
         PaymentResHandleDTO payResDTO;
         try {
             payResDTO = rest.postForEntity(
-                 tossOriginUrl + "/payments/" + paymentKey,
+                 tossOriginUrl + "/payments/confirm",
                     new HttpEntity<>(param, headers),
                     PaymentResHandleDTO.class
             ).getBody();
@@ -124,8 +125,8 @@ public class PaymentService {
             PaymentResHandleCardDTO card = payResDTO.getCard();
             paymentRepository.findByOrderId(payResDTO.getOrderId())
                     .ifPresent(payment -> {
-                        payment.setCardCompany(card.getCardCompany());
-                        payment.setCardNumber(card.getCardNumber());
+                        payment.setIssuerCode(card.getIssuerCode());
+                        payment.setCardNumber(card.getNumber());
                         payment.setPaySuccessYn("Y");
                     });
         }

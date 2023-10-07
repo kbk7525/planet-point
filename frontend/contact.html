@@ -140,7 +140,7 @@
                   <td>
                     <div>
                       <select class="donation-select">
-                        <option>일시기부</option>
+                        <option id="orderName">일시기부</option>
                       </select>
                     </div>
                   </td>
@@ -148,10 +148,10 @@
                 <tr>
                   <th>후원금액</th>
                   <td class="button-1">
-                    <button type="button" class="price" id="amount">10,000원</button>
-                    <button type="button" class="price" id="amount">30,000원</button>
-                    <button type="button" class="price" id="amount">50,000원</button>
-                    <button type="button" class="price" id="amount">100,000원</button>
+                    <button type="button" class="price" value=10000>10,000원</button>
+                    <button type="button" class="price" value=30000>30,000원</button>
+                    <button type="button" class="price" value=50000>50,000원</button>
+                    <button type="button" class="price" value=100000>100,000원</button>
                   </td>
                 </tr>
               </table>
@@ -163,7 +163,7 @@
               <table>
                 <tr>
                   <th class="bi-th">이름</th>
-                  <td> <input type="text" name="name" maxlength="12" size="20" required>
+                  <td> <input type="text" id="name" name="name" maxlength="12" size="20" required>
                 </tr>
                 <tr>
                   <th>휴대폰번호</th>
@@ -172,14 +172,14 @@
                 </tr>
                 <tr>
                   <th>이메일</th>
-                  <td> <input type="email" name="email" id="email" maxlength="20" size="20" required>
+                  <td> <input type="email" id="email" name="email" id="email" maxlength="20" size="20" required>
                   </td>
                 </tr>
               </table>
             </div>
 
             <!-- 신청하기 -->
-            <a class="btn btn--diagonal btn--blue" id="donation-btn" href="payment.html" target="_blank">신청하기</a>
+            <button class="btn btn--diagonal btn--blue" id="donation-btn" onclick="requestPayment()" target="_blank">신청하기</button>
           </div><!-- End Contact Form -->
 
         </div>
@@ -279,6 +279,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="js/payment.js"></script>
+  <script src="https://js.tosspayments.com/v1/payment"></script>
 </body>
 
 </html>

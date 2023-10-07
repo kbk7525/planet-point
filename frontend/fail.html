@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제 실패</title>
+</head>
+<body>
+    <h1>결제가 실패했습니다.</h1>
+    <p id="paymentDetails"></p>
+
+    <script>
+        let url = "http://127.0.0.1:8081/v1/api/payments/fail?";
+        const currentURL = new URL(window.location.href);
+        const searchParams = new URLSearchParams(currentURL.search);
+        url += searchParams;
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('paymentDetails').textContent = data;
+            })
+            .catch(error => {
+                console.error('GET 요청 오류:', error);
+            });
+    </script>
+</body>
+</html>
