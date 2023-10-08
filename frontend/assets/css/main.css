@@ -732,6 +732,7 @@ padding: 100px 0; */
   margin-bottom: 10px; /* 이미지 아래의 간격을 설정합니다. */
 }
 /* 이미지에 min-height를 적용합니다. */
+.why-us-img0 img,
 .why-us-img1 img,
 .why-us-img2 img,
 .why-us-img3 img,
@@ -2628,7 +2629,10 @@ payment-tb {
   background: #333;
   color: #fff;
   font-size: 14px;
+  z-index: 2; /* 글씨가 이미지 위에 나타나도록 설정 */
 }
+
+/* 이하 코드는 동일하게 유지 */
 
 .arrow_box:after {
   position: absolute;
@@ -2686,7 +2690,147 @@ span:hover + p.arrow_box {
 .swiper-slide img {
   max-height: 100vh;
   min-height: 60vh;
-
   width: auto;
   object-fit: cover;
+}
+.start {
+  padding: 0; /* 섹션의 패딩을 제거합니다. */
+}
+.start .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.startpoint {
+  max-height: 125vh;
+  min-height: 125vh;
+  width: auto;
+}
+
+[data-tooltip] {
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+  top: -35px;
+  left: 75px;
+}
+[data-tooltip]::after {
+  background-color: rgba(51, 51, 51, 0.9);
+  border-radius: 0.3rem;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 1rem;
+  font-size: 85%;
+  font-weight: normal;
+  line-height: 1.15rem;
+  opacity: 0;
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  text-align: center;
+  text-transform: none;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  white-space: pre;
+  z-index: 1;
+  text-align: right;
+}
+
+[data-tooltip].tooltip-top::before {
+  border-style: solid;
+  border-width: 0.3rem;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  border-color: rgba(51, 51, 51, 0.9) transparent transparent transparent;
+  top: 0;
+  left: 50%;
+  margin-left: -0.3rem;
+}
+
+[data-tooltip].tooltip-bottom::before {
+  border-style: solid;
+  border-width: 0.3rem;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  border-color: transparent transparent rgba(51, 51, 51, 0.9) transparent;
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.3rem;
+}
+
+[data-tooltip].tooltip-left::before {
+  border-style: solid;
+  border-width: 0.3rem;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  border-color: transparent transparent transparent rgba(51, 51, 51, 0.9);
+  top: 0.3rem;
+  right: calc(110% - 0.3rem);
+  margin-top: -0.3rem;
+}
+
+[data-tooltip].tooltip-right::before {
+  border-style: solid;
+  border-width: 0.3rem;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  border-color: transparent rgba(51, 51, 51, 0.9) transparent transparent;
+  top: 50%;
+  top: 0.3rem;
+  left: calc(110% - 0.3rem);
+  margin-top: -0.3rem;
+}
+
+[data-tooltip].tooltip-top::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+[data-tooltip].tooltip-bottom::after {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+[data-tooltip].tooltip-left::after {
+  top: -0.3rem;
+  right: calc(110% + 0.3rem);
+}
+
+[data-tooltip].tooltip-right::after {
+  top: -0.3rem;
+  left: calc(110% + 0.3rem);
+}
+
+[data-tooltip].tooltip-mobile::after {
+  font-size: 1rem;
+  max-width: 20rem;
+  position: fixed;
+  bottom: auto;
+  top: 50%;
+  left: 50%;
+  text-align: left;
+  transform: translate(-50%);
+  white-space: normal;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip][class*="tooltip-"]:hover::before {
+  visibility: visible;
+  opacity: 1;
 }
