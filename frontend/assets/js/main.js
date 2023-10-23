@@ -273,3 +273,24 @@ var swiper = new Swiper(".swiper-container", {
     delay: 3000,
   },
 });
+
+var swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1,
+  spaceBetween: -50, // 음수 값으로 슬라이드 간의 겹침을 설정합니다.
+  loopAdditionalSlides: 1,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+});
+var swiper = new Swiper(".swiper-container-donation", {
+  slidesPerView: 1, // 이미지 한 개만 보이도록 설정
+  spaceBetween: 200, // 이미지 간의 간격을 0으로 설정
+  loop: true, // 루프 설정 유지
+  autoplay: {
+    delay: 6000,
+  },
+  initialSlide: 0,
+});
+
+// donation
