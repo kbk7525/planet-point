@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+<!doctype html>
 
 <html lang="en">
 
@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Document</title>
+  <title>후원 완료</title>
 
   <style>
     * {
@@ -68,68 +68,54 @@
   <h3>후원 완료</h3>
 
   <table border="0">
-
     <tr>
 
-      <th>최종후원금액</th>
+      <th> 후원 번호</th>
 
-      <td>내용추가</td>
-
-    </tr>
-
-    <tr>
-
-      <th> 후원 ID</th>
-
-      <td> 내용추가</td>
+      <td id="orderId"></td>
 
     </tr>
-
     <tr>
 
       <th> 후원명</th>
 
-      <td> 플래닛포인트 후원</td>
+      <td id="orderName"></td>
 
     </tr>
     <tr>
 
-      <th> 후원 고객 이름</th>
+      <th> 결제 카드번호</th>
 
-      <td> 내용추가원</td>
+      <td id="card"></td>
+
+    </tr>
+    <tr>
+
+      <th> 후원 일시</th>
+
+      <td id="approvedAt"></td>
 
     </tr>
   </table>
 
-  ​
+  <script>
+    let url = "http://127.0.0.1:8081/v1/api/payments/success?";
+    const currentURL = new URL(window.location.href);
+    const searchParams = new URLSearchParams(currentURL.search);
+    url += searchParams;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('orderId').textContent = data.data.orderId;
+            document.getElementById('orderName').textContent = data.data.orderName;
+            document.getElementById('card').textContent = data.data.card.number;
+            document.getElementById('approvedAt').textContent = data.data.approvedAt;
+        })
+        .catch(error => {
+            console.error('GET 요청 오류:', error);
+        });
+</script>
 
 </body>
 
-</html> 
--->
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>결제 성공</title>
-</head>
-<body>
-    <h1>결제가 성공적으로 완료되었습니다.</h1>
-    <p id="paymentDetails"></p>
-
-    <script>
-        let url = "http://127.0.0.1:8081/v1/api/payments/success?";
-        const currentURL = new URL(window.location.href);
-        const searchParams = new URLSearchParams(currentURL.search);
-        url += searchParams;
-        fetch(url)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('paymentDetails').textContent = data;
-            })
-            .catch(error => {
-                console.error('GET 요청 오류:', error);
-            });
-    </script>
-</body>
 </html>

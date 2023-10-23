@@ -8,7 +8,7 @@ let naverLogin = new naver.LoginWithNaverId(
 );
 naverLogin.init();
 
-let closing_window = false;
+
 
 window.addEventListener('load', function() {
     naverLogin.getLoginStatus(function(status) {
@@ -40,6 +40,19 @@ window.addEventListener('load', function() {
             })
             .catch(error => {
                 alert('오류 발생', error);
+            });
+            
+            //로그인 되었을 때 환영메시지와 로그아웃 버튼 추가
+            const message_area = document.getElementById('message');
+            message_area.innerHTML = `${naverLogin.user.name}님`;
+            const button_area = document.getElementById('button_area');
+            button_area.innerHTML="<button id='btn_logout'>로그아웃</button>";
+
+            //로그아웃 버튼 누르면 로그아웃
+            const logout = document.getElementById('btn_logout');
+            logout.addEventListener('click', (e)=> {
+              naverLogin.logout();
+              location.replace("http://127.0.0.1:8080");
             });
         }
       });

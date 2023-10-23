@@ -271,7 +271,9 @@ section {
   .navbar {
     padding: 0;
   }
-
+  .navbar div {
+    padding: 15px 0 15px 15px;
+  }
   .navbar ul {
     margin: 0;
     padding: 0;
@@ -2833,4 +2835,8 @@ span:hover + p.arrow_box {
 [data-tooltip][class*="tooltip-"]:hover::before {
   visibility: visible;
   opacity: 1;
+}
+
+#message {
+  color: white;
 }

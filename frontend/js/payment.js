@@ -8,7 +8,6 @@ button.forEach(function(btn) {
     });
 });
 function requestPayment() {
-    // 입력된 이름 가져오기
     let orderName = document.getElementById("orderName").value;
     let email = document.getElementById('email').value;
     let name = document.getElementById("name").value;
@@ -18,14 +17,12 @@ function requestPayment() {
     let url = baseUrl + "?payType=카드&amount=" + encodeURIComponent(amount) + "&orderName=" + encodeURIComponent(orderName)
      + "&userEmail=" + encodeURIComponent(email) + "&userName=" + encodeURIComponent(name);
 
-    // 새로운 URL로 리다이렉트 또는 사용
-    //window.location.href = finalUrl;
     let postData = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json', // 요청 헤더 설정
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify({}), // POST 요청 본문 데이터
+        body: JSON.stringify({}),
     };
     fetch(url, postData)
     .then(response => {
@@ -48,8 +45,8 @@ function requestPayment() {
             orderName: res.data.orderName, // 주문명
             customerName: res.data.userName, // 구매자 이름
             customerEmail: res.data.userEmail,
-            successUrl: res.data.successUrl, // 결제 성공 시 이동할 페이지(이 주소는 예시입니다. 상점에서 직접 만들어주세요.)
-            failUrl: res.data.failUrl // 결제 실패 시 이동할 페이지(이 주소는 예시입니다. 상점에서 직접 만들어주세요.)
+            successUrl: res.data.successUrl, // 결제 성공 시 이동할 페이지
+            failUrl: res.data.failUrl // 결제 실패 시 이동할 페이지
         })
             // ------결제창을 띄울 수 없는 에러 처리 ------
             // 메서드 실행에 실패해서 reject 된 에러를 처리하는 블록입니다.
