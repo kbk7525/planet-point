@@ -272,7 +272,7 @@ section {
     padding: 0;
   }
   .navbar div {
-    padding: 0px 0 0px 0px;
+    padding: 0px 0px 0px 0px;
   }
   .navbar ul {
     margin: 0;
@@ -2878,11 +2878,8 @@ span:hover + p.arrow_box {
 #message {
   color: white;
 }
-<<<<<<< HEAD
 
 #btn_logout {
   color: white;
   border: none;
 }
-=======
->>>>>>> a382e78668bec217f057d56b2865532ccef55773
