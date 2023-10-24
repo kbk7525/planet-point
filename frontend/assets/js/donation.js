@@ -21,3 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// 모달이 나타났을 때 포커스를 설정
+$("#exampleModal1").on("shown.bs.modal", function () {
+  $("#exampleModal1").focus();
+});
