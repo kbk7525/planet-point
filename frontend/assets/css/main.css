@@ -541,7 +541,7 @@ section {
 
 .hero h2 {
   margin: 0;
-  font-size: 48px;
+  font-size: 43px;
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
@@ -741,9 +741,9 @@ padding: 100px 0; */
 .why-us-img4 img,
 .why-us-img5 img,
 .why-us-img6 img {
-  max-height: 125vh;
-  min-height: 125vh;
-  width: auto;
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -2735,6 +2735,7 @@ span:hover + p.arrow_box {
 }
 .start {
   padding: 0; /* 섹션의 패딩을 제거합니다. */
+  margin-top: 50px;
 }
 .start .container {
   display: flex;
@@ -2744,9 +2745,9 @@ span:hover + p.arrow_box {
 }
 
 .startpoint {
-  max-height: 125vh;
-  min-height: 125vh;
-  width: auto;
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 }
 
 [data-tooltip] {
