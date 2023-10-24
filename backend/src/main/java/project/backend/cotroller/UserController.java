@@ -28,6 +28,12 @@ public class UserController {
         }
     }
 
+    @PostMapping("/token")
+    public ResponseEntity<String> emailInfo(@RequestBody String token) throws Exception {
+        String userInfoToken = userService.getUserInfoToken(token);
+        return ResponseEntity.ok(userInfoToken);
+    }
+
     @GetMapping("/mypage")
     public ResponseEntity<?> loginInfo(@RequestParam String email) {
         Optional<User> user = userService.userInfo(email);

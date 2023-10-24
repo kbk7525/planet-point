@@ -27,6 +27,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'net.minidev:json-smart'
 	implementation 'com.google.code.gson:gson:2.9.0'
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'

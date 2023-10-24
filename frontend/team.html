@@ -71,11 +71,14 @@
           <li><a href="team.html" class="active">마이페이지</a></li>
           <li><a href="donation.html">기부하기</a></li>
           <li><a href="contact.html">후원하기</a></li>
+<<<<<<< Updated upstream
           <li>
             <!--네이버 로그인 버튼-->
             <div id="naverIdLogin"></div>
             <!--<img class="naver_btn" src="./assets/img/btnD_아이콘원형.png" alt="" id="naver_id_login">-->
           </li>
+=======
+>>>>>>> Stashed changes
         </ul>
       </nav><!-- .navbar -->
 
@@ -110,12 +113,13 @@
         </div>
         <div class="left">
           <div class="contact">
-            <form>
-              <h3>마이페이지</h3>
-              <input type="text" placeholder="아이디 : jd105@naver.com">
-              <input type="text" placeholder="새싹 : 15개">
-              <input type="text" placeholder="후원내역 : 15,000원">
-            </form>
+            <h3>마이페이지</h3>
+            <div style="display: block">
+              <div style="display: block">이메일: <span id="email"></span></div>
+              <div style="display: block">이름: <span id="name"></span></div>
+              <div style="display: block">핸드폰 번호: <span id="mobile"></span></div>
+              <div style="display: block">씨앗: <span id="seed"></span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -204,6 +208,66 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    //access token 보내서 사용자의 이메일 값을 받는 코드
+    let userEmail;
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const data = localStorage.getItem('com.naver.nid.access_token');
+      const token = data.split("bearer.")[1].split(".")[0];
+      fetch('http://localhost:8081/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        body: token,
+      })
+      .then(response => {
+        if(response.ok) {
+          return response.text();
+        }
+        throw new Error('통신 실패');
+      })
+      .then(data => {
+        userEmail = data;
+        findAndDisplayUserInfo(userEmail);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+
+      //페이지에 서버로부터 받아온 데이터를 뿌려주는 역할
+      function findAndDisplayUserInfo(userEmail) {
+        let userNameElement = document.getElementById("name");
+        let userEmailElement = document.getElementById("email");
+        let userMobileElement = document.getElementById("mobile");
+        let userSeedElement = document.getElementById("seed");
+
+        if (userNameElement && userEmailElement && userMobileElement && userSeedElement) {
+          fetch(`http://localhost:8081/mypage?email=${userEmail}`)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              // JSON 데이터를 HTML 요소에 할당
+              userNameElement.textContent = data.name;
+              userEmailElement.textContent = data.email;
+              userMobileElement.textContent = data.mobile;
+              userSeedElement.textContent = data.seed;
+            })
+            .catch(error => {
+              console.error("Fetch error: " + error);
+            });
+        } else {
+          setTimeout(findAndDisplayUserInfo, 100);
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

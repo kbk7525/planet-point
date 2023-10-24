@@ -32,7 +32,6 @@ window.addEventListener('load', function() {
             .then(response => response.text())
             .then(result => {
                 if (result === '회원가입 성공') {
-                    alert('회원 가입성공');
                 }
             })
             .catch(error => {
