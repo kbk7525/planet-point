@@ -6,28 +6,36 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.backend.domain.User;
 import project.backend.dto.UserDTO;
-import project.backend.repository.UserRepository;
 import project.backend.service.UserService;
+
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class UserController {
 
-    private final UserRepository userRepository;
     private final UserService userService;
 
     @PostMapping("/save")
     public ResponseEntity<String> login(@RequestBody UserDTO userDTO) {
         User createdUser = userService.createUser(userDTO);
         if(createdUser != null) {
-            return ResponseEntity.ok("로그인 성공");
+            return ResponseEntity.ok("회원가입 성공");
         }
         else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 회원가입 된 이메일입니다.");
+            return ResponseEntity.status(HttpStatus.OK).body("이미 회원가입 된 이메일입니다.");
         }
     }
 
-//    @GetMapping("/loginInfo")
-//    public ResponseEntity<User> loginInfo()
+    @GetMapping("/mypage")
+    public ResponseEntity<?> loginInfo(@RequestParam String email) {
+        Optional<User> user = userService.userInfo(email);
+        if(user.isPresent()) {
+            return ResponseEntity.ok(user.get());
+        }
+        else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

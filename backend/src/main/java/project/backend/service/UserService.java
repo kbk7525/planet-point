@@ -23,12 +23,16 @@ public class UserService {
                     .email(userDTO.getEmail())
                     .name(userDTO.getName())
                     .mobile(userDTO.getMobile())
-                    .seed(0)
+                    .seed(100)
                     .build();
             return userRepository.save(newUser);
         }
         else {
             return null;
         }
+    }
+
+    public Optional<User> userInfo(String email) {
+        return userRepository.findByEmail(email);
     }
 }
