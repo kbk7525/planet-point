@@ -8,8 +8,6 @@ let naverLogin = new naver.LoginWithNaverId(
 );
 naverLogin.init();
 
-
-
 window.addEventListener('load', function() {
     naverLogin.getLoginStatus(function(status) {
         if(status) {
@@ -33,9 +31,8 @@ window.addEventListener('load', function() {
         })
             .then(response => response.text())
             .then(result => {
-                if (result === 200) {
-                    alert('성공');
-                    window.location.replace('http://127.0.0.1:8080');
+                if (result === '회원가입 성공') {
+                    alert('회원 가입성공');
                 }
             })
             .catch(error => {
@@ -46,7 +43,7 @@ window.addEventListener('load', function() {
             const message_area = document.getElementById('message');
             message_area.innerHTML = `${naverLogin.user.name}님`;
             const button_area = document.getElementById('button_area');
-            button_area.innerHTML="<button id='btn_logout'>로그아웃</button>";
+            button_area.innerHTML="<a id='btn_logout' href=''>로그아웃</a>";
 
             //로그아웃 버튼 누르면 로그아웃
             const logout = document.getElementById('btn_logout');
