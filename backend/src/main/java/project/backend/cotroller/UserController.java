@@ -34,7 +34,7 @@ public class UserController {
         return ResponseEntity.ok(userInfoToken);
     }
 
-    @GetMapping("/mypage")
+    @GetMapping("/info")
     public ResponseEntity<?> loginInfo(@RequestParam String email) {
         Optional<User> user = userService.userInfo(email);
         if(user.isPresent()) {

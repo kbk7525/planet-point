@@ -1,5 +1,6 @@
 package project.backend.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import project.backend.dto.PaymentDTO;
@@ -59,6 +60,7 @@ public class Payment {
 
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JsonIgnore
     private User user;
 
     public PaymentResDTO toRes() {
