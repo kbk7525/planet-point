@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  <link rel="stylesheet" href="./assets/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>후원 완료</title>
@@ -97,24 +97,26 @@
 
     </tr>
   </table>
-
+  <div class="success_btn ">
+    <a href="index.html">메인페이지로 이동</a>
+  </div>
   <script>
     let url = "http://127.0.0.1:8081/v1/api/payments/success?";
     const currentURL = new URL(window.location.href);
     const searchParams = new URLSearchParams(currentURL.search);
     url += searchParams;
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('orderId').textContent = data.data.orderId;
-            document.getElementById('orderName').textContent = data.data.orderName;
-            document.getElementById('card').textContent = data.data.card.number;
-            document.getElementById('approvedAt').textContent = data.data.approvedAt;
-        })
-        .catch(error => {
-            console.error('GET 요청 오류:', error);
-        });
-</script>
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('orderId').textContent = data.data.orderId;
+        document.getElementById('orderName').textContent = data.data.orderName;
+        document.getElementById('card').textContent = data.data.card.number;
+        document.getElementById('approvedAt').textContent = data.data.approvedAt;
+      })
+      .catch(error => {
+        console.error('GET 요청 오류:', error);
+      });
+  </script>
 
 </body>
 

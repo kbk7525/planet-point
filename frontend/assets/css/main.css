@@ -2884,3 +2884,7 @@ span:hover + p.arrow_box {
   color: white;
   border: none;
 }
+.success_btn {
+  text-align: center;
+  justify-content: center;
+}
