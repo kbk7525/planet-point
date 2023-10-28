@@ -80,6 +80,10 @@ function decreaseSeed(userEmail) {
         })
         .then(message => {
           if (!isSeedInsufficient) {
+            if(clickElement.id == 4) {
+              increaseSeed(clickElement.id);
+              alert("구매 완료되었습니다.");
+            }
             proBar(progressBars[index], cnt);
             increaseSeed(clickElement.id);
             alert("기부가 완료되었습니다.");
