@@ -1,5 +1,7 @@
 let userEmail;
+let isSeedInsufficient = false;
 document.addEventListener("DOMContentLoaded", function () {
+  printSeed();
   const data = localStorage.getItem('com.naver.nid.access_token');
   const token = data.split("bearer.")[1].split(".")[0];
   fetch('http://localhost:8081/token', {
@@ -17,34 +19,105 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then(data => {
       userEmail = data;
-      donationInfo(userEmail);
+      decreaseSeed(userEmail);
     })
     .catch(error => {
       console.log(error);
     })
-  function donationInfo(userEmail) {
-    fetch(`http://localhost:8081/v1/api/payments/all?email=${userEmail}`)
+});
+
+function increaseSeed(elementId) {
+  if (elementId == 1 || elementId == 2 || elementId == 3) {
+    cnt = 10;
+  }
+  else {
+    cnt = 100;
+  }
+  fetch(`http://localhost:8081/donation/increase?elementId=${elementId}&cnt=${cnt}`, {
+    method: 'POST',
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("오류발생");
+      }
+      return response.text();
+    })
+    .then(data => {
+      console.log("기부 완료");
+
+      const progressValue = document.querySelector('.donation-progress');
+      const currentProgress = progressValue.value;
+      const maxProgress = progressValue.max;
+      const newProgress = Math.min(currentProgress + cnt, maxProgress);
+      progressValue.value = newProgress;
+    })
+    .catch(error => {
+      console.log(error);
+    })
+}
+
+function decreaseSeed(userEmail) {
+  const clickElements = document.querySelectorAll('.donation_img');
+  const progressBars = document.querySelectorAll(".donation-progress");
+  clickElements.forEach((clickElement, index) => {
+    let cnt;
+    clickElement.addEventListener('click', () => {
+      if (clickElement.id == 1 || clickElement.id == 2 || clickElement.id == 3) {
+        cnt = 10;
+      }
+      else {
+        cnt = 100;
+      }
+      fetch(`http://localhost:8081/donation/decrease?email=${userEmail}&cnt=${cnt}`, {
+        method: 'POST',
+      })
+        .then(response => {
+          if (!response.ok) {
+            alert("user의 씨앗수가 부족합니다.");
+            isSeedInsufficient = true;
+          }
+          return response.text();
+        })
+        .then(message => {
+          if (!isSeedInsufficient) {
+            proBar(progressBars[index], cnt);
+            increaseSeed(clickElement.id);
+            alert("기부가 완료되었습니다.");
+          }
+
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    })
+  });
+  function proBar(progressBar, cnt) {
+    const currentProgress = parseInt(progressBar.value);
+    const maxProgress = parseInt(progressBar.max);
+    const newProgress = Math.min(currentProgress + cnt, maxProgress);
+    progressBar.value = newProgress;
+  }
+}
+function printSeed() {
+  const elements = document.querySelectorAll('.donation-progress');
+  elements.forEach(element => {
+    const elementId = element.id.replace('progress-', '');
+    fetch(`http://localhost:8081/donation/print/${elementId}`)
       .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+        if (response.ok) {
+          return response.json();
         }
-        return response.json();
+        throw new Error("요소들의 씨앗을 가져오지 못했습니다.");
       })
       .then(data => {
-        makeTable(data.data);
+        const progressValue = document.getElementById(`progress-${elementId}`);
+        console.log(progressValue);
+        if (progressValue) {
+          progressValue.value = data.seedCnt;
+        }
       })
-  }
-
-  function makeTable(data) {
-    let table = document.getElementById('donationTable');
-    for (let i = 0; i < data.length; i++) {
-      let row = `<tr>
-                <td>${data[i].createDate}</td>
-                <td>${data[i].userName}</td>
-                <td>${data[i].payType}</td>
-                <td>${data[i].amount}</td>
-               </tr>`;
-      table.innerHTML += row
-    }
-  }
-});
+      .catch(error => {
+        console.log(error);
+      })
+  })
+}

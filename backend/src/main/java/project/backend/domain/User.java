@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Table
 @Getter
+@Setter
 public class User {
 
     @Id
