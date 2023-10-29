@@ -20,7 +20,7 @@ public class User {
     private Long id;
 
     @Column
-    private String uid;
+    private String uid; //user의 고유번호
 
     @Column
     private String name;
@@ -29,11 +29,12 @@ public class User {
     private String email;
 
     @Column
-    private String mobile;
+    private String mobile; //핸드폰 번호
 
     @Column
     private int seed;
 
+    //payment 엔티티와 1대다 관계
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @Builder.Default
     private List<Payment> payments = new ArrayList<>();

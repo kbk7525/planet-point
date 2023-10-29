@@ -60,7 +60,7 @@ public class Payment {
 
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JsonIgnore
+    @JsonIgnore //이걸 안해주니까 페이먼트 엔티티에 null값이 있어서 오류가 발생함
     private User user;
 
     public PaymentResDTO toRes() {
@@ -75,6 +75,7 @@ public class Payment {
                 .createDate(createDate)
                 .build();
     }
+
     public PaymentDTO toDTO() {
         return PaymentDTO.builder()
                 .paymentId(paymentId)

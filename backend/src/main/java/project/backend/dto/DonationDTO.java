@@ -2,6 +2,7 @@ package project.backend.dto;
 
 import lombok.*;
 
+//기부하기 탭에서 사용하는 dto
 @Builder
 @Getter
 @Setter

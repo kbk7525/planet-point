@@ -15,7 +15,7 @@ public class DonationController {
 
     private final DonationService donationService;
 
-    //이미지를 클릭했을 때 donation 테이블의 씨앗 증가
+    //이미지를 클릭했을 때 donation 테이블의 씨앗 증가하는 api
     @PostMapping("/increase")
     public ResponseEntity<String> increase(@RequestParam Long elementId, @RequestParam int cnt) {
         try{
@@ -26,7 +26,7 @@ public class DonationController {
         }
     }
 
-    //모달창의 x버튼 누르면 User 테이블의 씨앗 감소
+    //기부하기 탭의 이미지를 누르면 User 테이블의 씨앗 감소하는 api
     @PostMapping("/decrease")
     public ResponseEntity<String> decrease(@RequestParam String email, @RequestParam int cnt) {
         try {
@@ -37,7 +37,7 @@ public class DonationController {
         }
     }
 
-    //기부하기 페이지 요소의 현재 씨앗값 뿌려 주기
+    //기부하기 페이지 요소의 현재 씨앗값 뿌려 주는 api
     @GetMapping("/print/{elementId}")
     public ResponseEntity<DonationDTO> print(@PathVariable Long elementId) {
         DonationDTO donationDTO = donationService.findByElementId(elementId);

@@ -2,6 +2,7 @@ package project.backend.dto;
 
 import lombok.*;
 
+//토스쪽에서 보내준 데이터를 사용할 때 필요한 dto
 @Data
 @Builder
 @NoArgsConstructor

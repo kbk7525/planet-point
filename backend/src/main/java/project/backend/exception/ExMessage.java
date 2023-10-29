@@ -2,7 +2,7 @@ package project.backend.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
+//예외들을 모아놓은 enum
 @Getter
 @AllArgsConstructor
 public enum ExMessage {

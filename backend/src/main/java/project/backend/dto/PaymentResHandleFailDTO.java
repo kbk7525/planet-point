@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//결제 실패시 필요한 dto
 @Data
 @Builder
 @NoArgsConstructor

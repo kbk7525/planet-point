@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
+//토스 결제에 필요한 configure
 @Configuration
 @Getter
 public class PaymentConfig {

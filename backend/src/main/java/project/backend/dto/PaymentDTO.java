@@ -2,6 +2,7 @@ package project.backend.dto;
 
 import lombok.*;
 
+//payment 엔티티에 저장할때 사용하는 dto
 @Data
 @Builder
 @NoArgsConstructor

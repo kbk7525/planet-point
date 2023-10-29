@@ -17,10 +17,10 @@ public class Donation {
     private Long id;
 
     @Column
-    private Long elementId;
+    private Long elementId; //요소의 아이디
 
     @Column
-    private String donationName;
+    private String donationName; //요소의 이름
 
     //각 요소의 현재 씨앗값
     @Column
