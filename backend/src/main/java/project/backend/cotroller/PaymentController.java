@@ -18,6 +18,7 @@ public class PaymentController {
     private final PaymentService paymentService;
     private final ResponseService responseService;
 
+    //프론트에서 결제하기 버튼을 눌렀을 때 실행
     @PostMapping
     public SingleResult<PaymentResDTO> requestPayments(@ModelAttribute PaymentReqDTO paymentReqDTO) {
         try {
@@ -28,6 +29,7 @@ public class PaymentController {
         }
     }
 
+    //최종 결제 성공 api
     @GetMapping("/success")
     public SingleResult<PaymentResHandleDTO> requestFinalPayment(
             @RequestParam String paymentKey,
@@ -45,6 +47,7 @@ public class PaymentController {
         }
     }
 
+    //결제 실패 api
     @GetMapping("/fail")
     public SingleResult<PaymentResHandleFailDTO> requestFail(
             @RequestParam(name="code") String errorCode,
@@ -61,6 +64,7 @@ public class PaymentController {
         }
     }
 
+    //결제 내역을 모두 보여주는 api
     @GetMapping("/all")
     public ListResult<PaymentDTO> getAllPayments(@RequestParam String email) {
         try {

@@ -45,6 +45,7 @@ public class PaymentService {
     @Value("${payment.toss.origin_url}")
     private String tossOriginUrl;
 
+    //처음 사용자가 결제 요청을 하는 메소드
     @Transactional
     public PaymentResDTO reqPayment(PaymentReqDTO paymentReqDTO) {
         Long amount = paymentReqDTO.getAmount();
@@ -69,7 +70,7 @@ public class PaymentService {
         }
     }
 
-    //결제 요청 증명
+    //결제 요청 증명하는 메소드
     @Transactional
     public void verifyRequest(String paymentKey, String orderId, Long amount) {
         paymentRepository.findByOrderId(orderId)
@@ -87,6 +88,7 @@ public class PaymentService {
                 );
     }
 
+    //최종 결제 승인을 하는 메소드
     @Transactional
     public PaymentResHandleDTO requestFinalPayment(String paymentKey, String orderId, Long amount) {
         Payment pay = paymentRepository.findByPaymentKey(paymentKey)
@@ -94,6 +96,7 @@ public class PaymentService {
         String payType = pay.getPayType();
         RestTemplate rest = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
+        //토스 api에서 제공한 문서를 참조해 작성
         String encodedAuth = new String(Base64.getEncoder().encode((testSecretKey + ":").getBytes(StandardCharsets.UTF_8)));
         headers.setBasicAuth(encodedAuth);
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -121,6 +124,7 @@ public class PaymentService {
                     ).getMessage();
             throw new BusinessException(errorMessage);
         }
+        //카드결제만 구현
         if(payType.equals("카드")) {
             PaymentResHandleCardDTO card = payResDTO.getCard();
             paymentRepository.findByOrderId(payResDTO.getOrderId())
@@ -133,6 +137,7 @@ public class PaymentService {
         return payResDTO;
     }
 
+    //결제에 실패했을 경우의 메소드
     @Transactional
     public PaymentResHandleFailDTO requestFail(String errorCode, String errorMsg, String orderId) {
         Payment payment = paymentRepository.findByOrderId(orderId)
@@ -146,6 +151,7 @@ public class PaymentService {
                 .build();
     }
 
+    //user의 모든 결제내역을 조회하는 메소드
     @Transactional(readOnly = true)
     public List<PaymentDTO> getAllPayments(String userEmail) {
         String email = userRepository.findByEmail(userEmail)

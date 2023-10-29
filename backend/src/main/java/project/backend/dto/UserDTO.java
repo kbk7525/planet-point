@@ -2,6 +2,7 @@ package project.backend.dto;
 
 import lombok.*;
 
+//user dto
 @Builder
 @Getter
 @Setter

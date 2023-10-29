@@ -18,6 +18,8 @@ public class DonationService {
     private final DonationRepository donationRepository;
     private final UserRepository userRepository;
 
+    //기부 요소를 찾아서 저장하는 메소드
+    @Transactional
     public DonationDTO findByElementId(Long elementId) {
         Donation donation = donationRepository.findById(elementId).orElse(null);
         if(donation != null) {
@@ -27,6 +29,7 @@ public class DonationService {
         return null;
     }
 
+    //기부요소의 씨앗을 늘려주는 메소드
     @Transactional
     public void increaseElementSeed(Long elementId, int cnt) {
         Optional<Donation> element = donationRepository.findByElementId(elementId);
@@ -39,6 +42,7 @@ public class DonationService {
         donationRepository.save(existElement);
     }
 
+    //기부가 성공하면 해당 user의 씨앗을 감소시키는 메소드
     @Transactional
     public void decreaseUserSeed(String email, int cnt) {
         Optional<User> user = userRepository.findByEmail(email);

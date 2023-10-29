@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
+//토스 결제 시각 configure
 @Configuration
 public class DateConfig {
     public String getNowDate() {

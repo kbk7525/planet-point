@@ -2,6 +2,7 @@ package project.backend.dto;
 
 import lombok.Data;
 
+//토스쪽에서 카드결제를 포함한 모든 결제성공시 넘어오는 데이터를 사용하기 위한 dto
 @Data
 public class PaymentResHandleDTO {
     String mId; //가맹점 id
