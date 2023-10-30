@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function userInfo(userEmail) {
     let userNameElement = document.getElementById("name");
     let userEmailElement = document.getElementById("email");
-    let userMobileElement = document.getElementById("mobile");
+    let userMobileElement = document.getElementById("phone");
     if (userNameElement && userEmailElement && userMobileElement) {
       fetch(`http://localhost:8081/info?email=${userEmail}`)
         .then(response => {
