@@ -1026,16 +1026,14 @@ padding: 100px 0; */
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.myimg {
-  width: 100%;
-}
+
 .login {
   height: 650px;
   width: 100%;
   background: white;
   position: relative;
 }
-.login_box {
+.myback {
   width: 1050px;
   height: 600px;
   position: absolute;
@@ -1046,84 +1044,74 @@ padding: 100px 0; */
   box-shadow: 1px 4px 22px -8px #0004;
   display: flex;
   overflow: hidden;
-}
-.login_box .left {
-  width: 59%;
-  height: 100%;
-}
-.login_box .right {
-  width: 41%;
-  height: 100%;
+  background-image: url("../img/mypageimg.png");
 }
 
-.left .contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  height: 100%;
-  width: 100%;
-  margin: auto;
-}
-.left h3 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 50px;
-  color: black;
-}
-.left input {
-  border: none;
-  width: 80%;
-  margin: 15px 0px;
-  border-bottom: 4px solid #2cee95;
-  padding: 7px 9px;
-  width: 100%;
-  overflow: hidden;
-  background: transparent;
-  font-weight: 1000;
-  font-size: 20px;
-}
-.left input::placeholder {
-  font-weight: bold;
-  color: black;
-}
-
-.right {
-  background: #2cee95;
-  color: #fff;
-  position: relative;
-}
-
-.right .right-text {
-  height: 100%;
-  position: relative;
-  transform: translate(0%, 45%);
-}
-.right-text h2 {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 50px;
-  font-weight: 500;
-}
-
-.right .right-inductor {
-  position: absolute;
-  width: 70px;
-  height: 7px;
-  background: #fff0;
-  left: 50%;
-  bottom: 70px;
-  transform: translate(-50%, 0%);
-}
-
-.doimg {
+.member{
   width: 300px;
-  height: 380px;
-  text-align: center;
-  margin-left: 60px;
-  margin-top: 50px;
+  height: 450px;
+  margin-left: 183px;
+  margin-top: 74px;
 }
+.inform{
+
+  width: 300px;
+  height: 450px;
+  margin-left: 82px;
+  margin-top: 74px;
+  font-weight: bold;
+}
+
+
+.tex1{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 260px;
+}
+
+.tex2{
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.tex3{
+  font-size: 15px;
+  margin-left: 120px;
+  margin-top: 132px;
+  
+}
+#mobile{
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+.tex4{
+  font-size: 15px;
+  margin-left: 138px;
+  margin-top: 17px;
+  
+}
+#seed{
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+.tex5{
+  font-size: 15px;
+ margin-left: 120px;
+ margin-top: 15px;
+}
+#money{
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Services Cards Section
