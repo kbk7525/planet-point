@@ -20,6 +20,7 @@
       .then(data => {
         userEmail = data;
         findAndDisplayUserInfo(userEmail);
+        donationInfo(userEmail);
       })
       .catch(error => {
         console.log(error);
@@ -45,7 +46,7 @@
               userNameElement.textContent = data.name;
               userEmailElement.textContent = data.email;
               userMobileElement.textContent = data.mobile;
-              userSeedElement.textContent = data.seed;
+              userSeedElement.textContent = data.seed + '개';
             })
             .catch(error => {
               console.error("Fetch error: " + error);
@@ -53,5 +54,32 @@
         } else {
           setTimeout(findAndDisplayUserInfo, 100);
         }
+      }
+
+      function donationInfo(userEmail) {
+        fetch(`http://localhost:8081/v1/api/payments/all?email=${userEmail}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            insertMoney(data.data);
+          })
+      }
+
+      function insertMoney(data) {
+        let money = document.getElementById('money');
+        let total = 0;
+        for (let i = 0; i < data.length; i++) {
+          total += parseInt(data[i].amount);
+        }
+        const totalMoney = addCommasToNumber(total);
+        money.textContent = totalMoney + '원';
+      }
+
+      function addCommasToNumber(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
     });

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function makeTable(data) {
     let table = document.getElementById('donationTable');
-    for (let i = data.length-1; i >= 0; i--) {
+    for (let i = data.length - 1; i >= 0; i--) {
       const formattedNumber = addCommasToNumber(data[i].amount);
       let row = `<tr>
                 <td>${data[i].createDate}</td>
@@ -51,5 +51,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addCommasToNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+  }
 });
