@@ -292,5 +292,3 @@ var swiper = new Swiper(".swiper-container-donation", {
   },
   initialSlide: 0,
 });
-
-// donation
