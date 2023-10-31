@@ -83,3 +83,8 @@
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
     });
+
+    function showPopup() {
+      console.log("버튼 클릭됨!");  // 이 로그가 콘솔에 나타나는지 확인
+      window.open("donation_log.html", "a", "width=400, height=200, left=100, top=50");
+    }
