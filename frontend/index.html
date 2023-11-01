@@ -8,7 +8,12 @@
   <title>PLANET POINT - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+  <!-- 제이쿼리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- gsap -->
@@ -128,6 +133,7 @@
     <section id="start" class="start">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
+
           <h2>어떻게 시작 됐나요?</h2>
 
         </div>
@@ -141,6 +147,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
+
           <h2>왜 지켜야 하나요?</h2>
 
         </div>
@@ -173,6 +180,7 @@
           </div>
         </div>
       </div>
+
     </section><!-- End Our Services Section -->
 
 
@@ -235,15 +243,26 @@
       <!-- 뱃지 -->
       <div class="badges">
         <div class="badge">
-          <img class="bad_img" src="./assets/img/씨앗.png" alt="Badge"/>
+          <img class="bad_img" src="./assets/img/씨앗.png" alt="Badge" id="badgeImage" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
         </div>
       </div>
 
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">출석체크 완료!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              100 씨앗 지급 완료!
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-    </section><!-- End Features Section -->
-
-    <!-- ======= Recent Blog Posts Section ======= -->
+      <!-- ======= Recent Blog Posts Section ======= -->
 
   </main><!-- End #main -->
 
@@ -293,6 +312,9 @@
         </div>
       </div>
     </div>
+
+    <!-- modal -->
+
 
 
   </footer><!-- End Footer --><!-- End Footer -->
