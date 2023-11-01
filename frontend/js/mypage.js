@@ -73,7 +73,9 @@
         let money = document.getElementById('money');
         let total = 0;
         for (let i = 0; i < data.length; i++) {
-          total += parseInt(data[i].amount);
+          if(data[i].paySuccessYn === 'Y') {
+            total += parseInt(data[i].amount);
+          }
         }
         const totalMoney = addCommasToNumber(total);
         money.textContent = totalMoney + '원';
@@ -86,5 +88,5 @@
 
     function showPopup() {
       console.log("버튼 클릭됨!");  // 이 로그가 콘솔에 나타나는지 확인
-      window.open("donation_log.html", "a", "width=400, height=200, left=100, top=50");
+      window.open("donation_log.html", "a", "width=1000, height=600, left=100, top=50");
     }

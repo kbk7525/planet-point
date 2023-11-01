@@ -38,14 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
   function makeTable(data) {
     let table = document.getElementById('donationTable');
     for (let i = data.length - 1; i >= 0; i--) {
-      const formattedNumber = addCommasToNumber(data[i].amount);
-      let row = `<tr>
-                <td>${data[i].createDate}</td>
-                <td>${data[i].userName}</td>
-                <td>${data[i].payType}</td>
-                <td>${formattedNumber}</td>
-               </tr>`;
-      table.innerHTML += row
+      if (data[i].paySuccessYn === 'Y') {
+        const formattedNumber = addCommasToNumber(data[i].amount);
+        let row = `<tr>
+                  <td>${data[i].createDate}</td>
+                  <td>${data[i].userName}</td>
+                  <td>${data[i].payType}</td>
+                  <td>${formattedNumber}</td>
+                 </tr>`;
+        table.innerHTML += row
+      }
     }
   }
 
@@ -53,3 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 });
+
+function toggleBtn1() {
+  
+  // 토글 할 버튼 선택 (btn1)
+  const btn1 = document.getElementById('btn1');
+  
+  // btn1 숨기기 (display: none)
+  if(btn1.style.display !== 'none') {
+    btn1.style.display = 'none';
+  }
+  
+}
