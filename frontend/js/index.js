@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const data = localStorage.getItem('com.naver.nid.access_token');
   if (data) {
     const token = data.split("bearer.")[1].split(".")[0];
-    fetch('http://localhost:8081/token', {
+    fetch('http://planet-point.ap-northeast-2.elasticbeanstalk.com/token', {
       method: 'POST',
       headers: {
         'Content-Type': 'text/plain',

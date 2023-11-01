@@ -15,7 +15,7 @@ function requestPayment() {
     let email = document.getElementById('email').value;
     let name = document.getElementById("name").value;
 
-    let baseUrl = "http://localhost:8081/v1/api/payments";
+    let baseUrl = "http://planet-point.ap-northeast-2.elasticbeanstalk.com/v1/api/payments";
 
     //바꾸면 안됨
     let url = baseUrl + "?payType=카드&amount=" + encodeURIComponent(amount) + "&orderName=" + encodeURIComponent(orderName)

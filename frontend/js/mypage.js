@@ -4,7 +4,7 @@
 
       const data = localStorage.getItem('com.naver.nid.access_token');
       const token = data.split("bearer.")[1].split(".")[0];
-      fetch('http://localhost:8081/token', {
+      fetch('http://planet-point.ap-northeast-2.elasticbeanstalk.com/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain',
@@ -34,7 +34,7 @@
         let userSeedElement = document.getElementById("seed");
 
         if (userNameElement && userEmailElement && userMobileElement && userSeedElement) {
-          fetch(`http://localhost:8081/info?email=${userEmail}`)
+          fetch(`http://planet-point.ap-northeast-2.elasticbeanstalk.com/info?email=${userEmail}`)
             .then(response => {
               if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -57,7 +57,7 @@
       }
 
       function donationInfo(userEmail) {
-        fetch(`http://localhost:8081/v1/api/payments/all?email=${userEmail}`)
+        fetch(`http://planet-point.ap-northeast-2.elasticbeanstalk.com/v1/api/payments/all?email=${userEmail}`)
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
