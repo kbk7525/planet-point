@@ -30,11 +30,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           });
         });
+
         badge.addEventListener('click', function (e) {
           if (!isLogIn) {
             e.preventDefault();
             alert('로그인이 필요한 서비스입니다.');
             window.location.href = 'index.html';
+          } else {
+            fetch(`http://planet-point.ap-northeast-2.elasticbeanstalk.com/increaseSeed?email=${userEmail}&cnt=100`, {
+              method: 'POST',
+            })
+              .then(response => {
+                if (response.ok) {
+                  return response.text();
+                }
+                throw new Error('씨앗 증가 요청 실패');
+              })
+              .then(data => {
+                console.log(data); 
+              })
+              .catch(error => {
+                console.log(error);
+              });
           }
         });
       })
