@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         userEmail = data;
         const isLogIn = checkLogin(userEmail);
         const links = document.querySelectorAll(".check_login");
+        const badge = document.querySelector(".badges");
         links.forEach(link => {
           link.addEventListener('click', function (e) {
             if (!isLogIn) {
@@ -29,6 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           });
         });
+        badge.addEventListener('click', function (e) {
+          if (!isLogIn) {
+            e.preventDefault();
+            alert('로그인이 필요한 서비스입니다.');
+            window.location.href = 'index.html';
+          }
+        });
       })
       .catch(error => {
         console.log(error);
@@ -37,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   else {
     const isLogIn = checkLogin(null);
     const links = document.querySelectorAll(".check_login");
+    const badge = document.querySelector(".badges");
     links.forEach(link => {
       link.addEventListener('click', function (e) {
         if (!isLogIn) {
@@ -45,6 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = 'index.html';
         }
       });
+    });
+    badge.addEventListener('click', function (e) {
+      if (!isLogIn) {
+        e.preventDefault();
+        alert('로그인이 필요한 서비스입니다.');
+        window.location.href = 'index.html';
+      }
     });
   }
 });
