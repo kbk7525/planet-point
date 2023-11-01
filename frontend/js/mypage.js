@@ -73,7 +73,9 @@
         let money = document.getElementById('money');
         let total = 0;
         for (let i = 0; i < data.length; i++) {
-          total += parseInt(data[i].amount);
+          if(data[i].paySuccessYn === 'Y') {
+            total += parseInt(data[i].amount);
+          }
         }
         const totalMoney = addCommasToNumber(total);
         money.textContent = totalMoney + '원';

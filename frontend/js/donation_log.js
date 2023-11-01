@@ -38,14 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
   function makeTable(data) {
     let table = document.getElementById('donationTable');
     for (let i = data.length - 1; i >= 0; i--) {
-      const formattedNumber = addCommasToNumber(data[i].amount);
-      let row = `<tr>
-                <td>${data[i].createDate}</td>
-                <td>${data[i].userName}</td>
-                <td>${data[i].payType}</td>
-                <td>${formattedNumber}</td>
-               </tr>`;
-      table.innerHTML += row
+      if (data[i].paySuccessYn === 'Y') {
+        const formattedNumber = addCommasToNumber(data[i].amount);
+        let row = `<tr>
+                  <td>${data[i].createDate}</td>
+                  <td>${data[i].userName}</td>
+                  <td>${data[i].payType}</td>
+                  <td>${formattedNumber}</td>
+                 </tr>`;
+        table.innerHTML += row
+      }
     }
   }
 
