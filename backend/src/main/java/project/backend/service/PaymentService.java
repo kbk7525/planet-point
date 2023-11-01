@@ -70,7 +70,7 @@ public class PaymentService {
         }
     }
 
-    //결제 요청 증명하는 메소드
+    //최종 결제 요청 증명하는 메소드
     @Transactional
     public void verifyRequest(String paymentKey, String orderId, Long amount) {
         paymentRepository.findByOrderId(orderId)

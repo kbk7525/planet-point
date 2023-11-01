@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/data?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://awseb-e-x8ii5dpdrm-stack-awsebrdsdatabase-wjvwop1fsrzo.cvgsgsx6gmpf.ap-northeast-2.rds.amazonaws.com:3306/ebdb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: root
     password: 12345678
   jpa:
@@ -21,7 +21,7 @@ payment:
     origin_url: "https://api.tosspayments.com/v1"
 
 server:
-  port: 8081
+  port: 5000
 
 oauth:
   naver:

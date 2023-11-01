@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
             name: name,
             mobile: mobile
           }
-          fetch('http://localhost:8081/save', {
+          fetch('http://planet-point.ap-northeast-2.elasticbeanstalk.com/save', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8;',

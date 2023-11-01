@@ -1047,14 +1047,13 @@ padding: 100px 0; */
   background-image: url("../img/mypageimg.png");
 }
 
-.member{
+.member {
   width: 300px;
   height: 450px;
   margin-left: 183px;
   margin-top: 74px;
 }
-.inform{
-
+.inform {
   width: 300px;
   height: 450px;
   margin-left: 82px;
@@ -1062,56 +1061,49 @@ padding: 100px 0; */
   font-weight: bold;
 }
 
-
-.tex1{
+.tex1 {
   font-size: 25px;
   font-weight: bold;
   text-align: center;
   margin-top: 260px;
 }
 
-.tex2{
+.tex2 {
   font-size: 15px;
   text-align: center;
   margin-top: 10px;
 }
 
-.tex3{
+.tex3 {
   font-size: 15px;
   margin-left: 120px;
   margin-top: 132px;
-  
 }
-#mobile{
+#mobile {
   display: block;
   text-align: center;
   margin-top: 5px;
 }
-.tex4{
+.tex4 {
   font-size: 15px;
   margin-left: 138px;
   margin-top: 17px;
-  
 }
-#seed{
+#seed {
   display: block;
   text-align: center;
   margin-top: 5px;
 }
-.tex5{
+.tex5 {
   font-size: 15px;
- margin-left: 120px;
- margin-top: 15px;
+  margin-left: 120px;
+  margin-top: 15px;
 }
-#money{
+#money {
   display: block;
   text-align: center;
   margin-top: 5px;
 }
-
-
-
-
 
 /*--------------------------------------------------------------
 # Services Cards Section
@@ -2875,4 +2867,42 @@ span:hover + p.arrow_box {
 .success_btn {
   text-align: center;
   justify-content: center;
+}
+
+.badges {
+  position: fixed;
+  top: 140px;
+  right: 180px;
+  z-index: 999;
+}
+
+.badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  max-width: 100px;
+  max-height: 100px;
+  width: 100%;
+  height: auto;
+  animation: 1.5s infinite linear;
+}
+
+.bad_img {
+  object-fit: cover;
+  width: 30px;
+  position: absolute;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
