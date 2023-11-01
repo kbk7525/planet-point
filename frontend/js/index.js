@@ -1,6 +1,35 @@
 let userEmail;
 document.addEventListener("DOMContentLoaded", function () {
   const data = localStorage.getItem('com.naver.nid.access_token');
+  var isHidden = getCookie("badgeHidden");
+  const badge = document.querySelector(".badges");
+  if (isHidden === "true") {
+    badge.style.display = "none";
+  } else {
+    badge.style.display = "block";
+  }
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
   if (data) {
     const token = data.split("bearer.")[1].split(".")[0];
     fetch('http://planet-point.ap-northeast-2.elasticbeanstalk.com/token', {
@@ -20,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         userEmail = data;
         const isLogIn = checkLogin(userEmail);
         const links = document.querySelectorAll(".check_login");
-        const badge = document.querySelector(".badges");
         links.forEach(link => {
           link.addEventListener('click', function (e) {
             if (!isLogIn) {
@@ -37,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('로그인이 필요한 서비스입니다.');
             window.location.href = 'index.html';
           } else {
+            setCookie("badgeHidden", "true", 1);
+            badge.style.display = "none";
             fetch(`http://planet-point.ap-northeast-2.elasticbeanstalk.com/increaseSeed?email=${userEmail}&cnt=100`, {
               method: 'POST',
             })
