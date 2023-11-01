@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>PLANET POINT - Mypage</title>
+  <title>PLANET POINT - sponsor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,14 +28,6 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
-
-
-  <!-- 글꼴 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@800&family=Playfair+Display&family=Public+Sans:wght@700&display=swap"
-    rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -46,11 +38,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
-
 </head>
 
-<body class="page-team">
+<body class="page-contact">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -68,9 +58,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">메인페이지</a></li>
-          <li><a href="team.html" class="active">마이페이지</a></li>
+          <li><a href="mypagae.html">마이페이지</a></li>
           <li><a href="donation.html">기부하기</a></li>
-          <li><a href="contact.html">후원하기</a></li>
+          <li><a href="support.html" class="active">후원하기</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -80,46 +70,106 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center"
-      style="background-image: url('./assets/img/titles/진짜마이페이지.png');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/titles/마이페이지2.png')">
       <div class="container position-relative d-flex flex-column align-items-center">
 
-        <h2>마이페이지</h2>
+        <h2>후원하기</h2>
         <ol>
           <li><a href="index.html">메인페이지</a></li>
-          <li>마이페이지</li>
+          <li>후원하기</li>
         </ol>
 
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="login" class="login">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container position-relative" data-aos="fade-up">
 
-      <div class="myback">
-        
-            <div style="display: block" class="member">
-              <div style="display: block" class="tex1"><span id="name"></span></div>
-              <div style="display: block" class="tex2"><span id="email"></span></div>
-            </div>
-            <div style="display: block" class="inform">
-              <div style="display: block" class="tex3">전화번호</div>
-              <span id="mobile"></span>
+        <div class="row gy-4 d-flex justify-content-center">
 
-              <div style="display: block" class="tex4">씨앗</div>
-              <span id="seed"></span>
-              
-              <div style="display: block" class="tex5">총 후원금</div>
-              <span id="money"></span>
-              <div style="display: block" class="moneytotal">
-                <input type="button" value="후원내역 확인" onclick="showPopup();"/>
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- <div class="info-item d-flex"> 후원페이지 왼쪽부분임
+              <i class="bi bi-ge-alt flex-shrink-0"></i>
+              <div>
+                <h4>Location:</h4>
+                <p>A108 Adam Street, New York, NY 535022</p>
               </div>
             </div>
+
+            <div class="info-item d-flex">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h4>Email:</h4>
+                <p>info@example.com</p>o
+              </div>
+            </div>
+
+            <div class="info-item d-flex">
+              <i class="bi bi-phone flex-shrink-0"></i>
+              <div>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>
+
+          </div> -->
+            <b class="donation-info">후원정보</b>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+              <table id="form1" class="form">
+                <tr>
+                  <th class="text">후원명</th>
+                  <td>
+                    <div>
+                      <select class="donation-select">
+                        <option id="orderName">일시기부</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>후원금액</th>
+                  <td class="button-1">
+                    <button type="button" class="price" value=10000>10,000원</button>
+                    <button type="button" class="price" value=30000>30,000원</button>
+                    <button type="button" class="price" value=50000>50,000원</button>
+                    <button type="button" class="price" value=100000>100,000원</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- 기본정보  -->
+            <br>
+            <b class="donation-info">기본정보</b>
+            <div class="basic-information">
+              <table>
+                <tr>
+                  <th class="bi-th">이름</th>
+                  <td> <input type="text" id="name" value="" readonly>
+                </tr>
+                <tr>
+                  <th>휴대폰번호</th>
+                  <td> <input type="text" id="phone" value="" readonly>
+                  </td>
+                </tr>
+                <tr>
+                  <th>이메일</th>
+                  <td> <input type="email" id="email" value="" readonly>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- 신청하기 -->
+            <button class="btn btn--diagonal btn--blue" id="donation-btn" onclick="requestPayment()"
+              target="_blank">신청하기</button>
+          </div><!-- End Contact Form -->
+
+        </div>
+
       </div>
-      
-
-
-    </section><!-- End Team Section -->
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -136,9 +186,9 @@
             <p>저희 플래닛포인트는 지구온난화를 대비하는 비영리 단체입니다.</p>
             <div class="social-links d-flex  mt-3">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              
               <a href="https://www.instagram.com/planet_point_" class="instagram"><i class="bi bi-instagram"></i></a>
-
+              
             </div>
           </div>
 
@@ -146,9 +196,9 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bi bi-dash"></i> <a href="index.html">메인페이지</a></li>
-              <li><i class="bi bi-dash"></i> <a href="team.html">마이페이지</a></li>
+              <li><i class="bi bi-dash"></i> <a href="mypage.html">마이페이지</a></li>
               <li><i class="bi bi-dash"></i> <a href="donation.html">기부하기</a></li>
-              <li><i class="bi bi-dash"></i> <a href="contact.html">후원하기</a></li>
+              <li><i class="bi bi-dash"></i> <a href="support.html">후원하기</a></li>
             </ul>
           </div>
 
@@ -160,17 +210,16 @@
               강원특별자치도 <br>
               춘천시 한림대학길 1<br>
               공학관 <br><br>
-              <strong>Phone:</strong> 033 248 1000<br>
+              <strong>Phone:</strong>  033 248 1000<br>
               <strong>Email:</strong> planetpoint@hallym.ac.kr<br>
             </p>
-
           </div>
 
         </div>
       </div>
     </div>
 
-
+    
   </footer><!-- End Footer --><!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -189,7 +238,8 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script src="js/mypage.js"></script>
+  <script src="js/payment.js"></script>
+  <script src="https://js.tosspayments.com/v1/payment"></script>
+  <script src="js/sponsor.js"></script>
 </body>
-
 </html>
