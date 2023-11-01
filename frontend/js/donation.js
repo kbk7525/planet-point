@@ -69,7 +69,7 @@ function decreaseSeed(userEmail) {
         clickElement.id == 2 ||
         clickElement.id == 3
       ) {
-        cnt = 10;
+        cnt = 100;
       } else {
         cnt = 100;
       }
