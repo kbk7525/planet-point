@@ -1,4 +1,5 @@
 let userEmail;
+
 document.addEventListener("DOMContentLoaded", function () {
   const data = localStorage.getItem('com.naver.nid.access_token');
   let isHidden = getCookie("badgeHidden");
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
               });
           }
         });
+        
       })
       .catch(error => {
         console.log(error);

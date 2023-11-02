@@ -301,9 +301,11 @@ window.addEventListener(
   "scroll",
   _.throttle(function () {
     if (window.scrollY > 1000) {
+      badgeEl.style.transition = "opacity 0.6s";
       // 배지 숨기기
       badgeEl.style.opacity = 0;
     } else {
+      badgeEl.style.transition = "opacity 0.6s";
       //배지 재노출
       badgeEl.style.opacity = 1;
     }
