@@ -302,16 +302,10 @@ window.addEventListener(
   _.throttle(function () {
     if (window.scrollY > 1000) {
       // 배지 숨기기
-      gsap.to(badgeEl, 0.6, {
-        opacity: 0,
-        display: "none",
-      });
+      badgeEl.style.opacity = 0;
     } else {
       //배지 재노출
-      gsap.to(badgeEl, 0.6, {
-        opacity: 1,
-        display: "block",
-      });
+      badgeEl.style.opacity = 1;
     }
   }, 300)
 );
