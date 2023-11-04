@@ -44,6 +44,23 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
           return response.text();
         }
+        const links = document.querySelectorAll(".check_login");
+        links.forEach(link => {
+          link.addEventListener('click', function (e) {
+            if (userEmail === null || userEmail === undefined) {
+              e.preventDefault();
+              alert('로그인이 필요한 서비스입니다.');
+              window.location.href = 'index.html';
+            }
+          });
+        });
+        badge.addEventListener('click', function (e) {
+          if (userEmail === null || userEmail === undefined) {
+            e.preventDefault();
+            alert('로그인이 필요한 서비스입니다.');
+            window.location.href = 'index.html';
+          } 
+        });
         throw new Error('통신 실패');
       })
       .then(data => {
@@ -115,12 +132,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function checkLogin(userEmail) {
-  let flag = false;
-  if (userEmail != null) {
-    flag = true;
-    return flag;
+  if (userEmail !== null) {
+    return true;
   }
   else {
-    return flag;
+    return false;
   }
 }
