@@ -2906,3 +2906,12 @@ span:hover + p.arrow_box {
     transform: translateY(0);
   }
 }
+
+.moneytotal {
+  position: relative;
+}
+.total_btn {
+  position: absolute;
+  left: 190px;
+  top: -50px;
+}

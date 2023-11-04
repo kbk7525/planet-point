@@ -541,3 +541,8 @@ a:hover {
     z-index: 9996;
   }
 }
+
+/* 후원내역 확인 버튼  */
+.total_btn {
+  margin-right: -150px;
+}

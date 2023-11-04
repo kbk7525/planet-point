@@ -38,7 +38,8 @@
     rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="./assets/css/mypages.css">
+  <!-- <link href="./assets/css/mypage.css" rel="stylesheet"> -->
   <!-- =======================================================
   * Template Name: Nova
   * Updated: Aug 30 2023 with Bootstrap v5.3.1
@@ -97,26 +98,36 @@
     <section id="login" class="login">
 
       <div class="myback">
-        
-            <div style="display: block" class="member">
-              <div style="display: block" class="tex1"><span id="name"></span></div>
-              <div style="display: block" class="tex2"><span id="email"></span></div>
-            </div>
-            <div style="display: block" class="inform">
-              <div style="display: block" class="tex3">전화번호</div>
-              <span id="mobile"></span>
 
-              <div style="display: block" class="tex4">씨앗</div>
-              <span id="seed"></span>
-              
-              <div style="display: block" class="tex5">총 후원금</div>
-              <span id="money"></span>
-              <div style="display: block" class="moneytotal">
-                <input type="button" value="후원내역 확인" onclick="showPopup();"/>
-              </div>
-            </div>
+        <div style="display: block" class="member">
+          <div style="display: block" class="tex1"><span id="name"></span></div>
+          <div style="display: block" class="tex2"><span id="email"></span></div>
+        </div>
+        <div style="display: block" class="inform">
+          <div style="display: block" class="tex3">전화번호</div>
+          <span id="mobile"></span>
+
+          <div style="display: block" class="tex4">씨앗</div>
+          <span id="seed"></span>
+
+          <div style="display: block" class="tex5">총 후원금</div>
+          <span id="money"></span>
+          <div style="display: block" class="moneytotal">
+
+
+            <button class="total_btn" value="후원내역 확인" onclick="showPopup();">후원내역</button>
+
+
+            <!-- dribbble -->
+            <a class="dribbble" href="https://dribbble.com/shots/7441241-Button-Hover-Effects" target="_blank"><img
+                src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg"
+                alt=""></a>
+
+
+          </div>
+        </div>
       </div>
-      
+
 
 
     </section><!-- End mypage Section -->
@@ -136,7 +147,7 @@
             <p>저희 플래닛포인트는 지구온난화를 대비하는 비영리 단체입니다.</p>
             <div class="social-links d-flex  mt-3">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              
+
               <a href="https://www.instagram.com/planet_point_" class="instagram"><i class="bi bi-instagram"></i></a>
 
             </div>
