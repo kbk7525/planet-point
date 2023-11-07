@@ -33,8 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (data) {
     const token = data.split("bearer.")[1].split(".")[0];
+<<<<<<< HEAD
     fetch("https://planet-point.ap-northeast-2.elasticbeanstalk.com/token", {
       method: "POST",
+=======
+    fetch('https://planet-point.shop/token', {
+      method: 'POST',
+>>>>>>> 347208485c2ca7c8a5837a501ea23bdb9a6aa76e
       headers: {
         "Content-Type": "text/plain",
       },
@@ -85,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             setCookie("badgeHidden", "true", 1);
             badge.style.display = "none";
+<<<<<<< HEAD
             fetch(
               `https://planet-point.ap-northeast-2.elasticbeanstalk.com/increaseSeed?email=${userEmail}&cnt=100`,
               {
@@ -92,6 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             )
               .then((response) => {
+=======
+            fetch(`https://planet-point.shop/increaseSeed?email=${userEmail}&cnt=100`, {
+              method: 'POST',
+            })
+              .then(response => {
+>>>>>>> 347208485c2ca7c8a5837a501ea23bdb9a6aa76e
                 if (response.ok) {
                   return response.text();
                 }

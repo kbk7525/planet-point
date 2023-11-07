@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 let naverLogin = new naver.LoginWithNaverId({
   clientId: "RVvWO7R3QM1UnNRS0fnv",
   callbackUrl: "https://planet-point.netlify.app/",
   isPopup: false,
   loginButton: { color: "green", type: 2, height: 30 },
 });
+=======
+let naverLogin = new naver.LoginWithNaverId(
+  {
+    clientId: "RVvWO7R3QM1UnNRS0fnv",
+    callbackUrl: "https://planet-point.netlify.app/",
+    isPopup: false,
+    loginButton: {color: "green", type: 2, height: 30}
+  }
+);
+>>>>>>> 347208485c2ca7c8a5837a501ea23bdb9a6aa76e
 naverLogin.init();
 
 window.addEventListener("load", function () {
@@ -31,11 +42,21 @@ window.addEventListener("load", function () {
         .then((result) => {
           if (result === "회원가입 성공") {
           }
+<<<<<<< HEAD
+=======
+          fetch('https://planet-point.shop/save', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8;',
+            },
+            body: JSON.stringify(data)
+>>>>>>> 347208485c2ca7c8a5837a501ea23bdb9a6aa76e
         })
         .catch((error) => {
           alert("오류 발생", error);
         });
 
+<<<<<<< HEAD
       //로그인 되었을 때 환영메시지와 로그아웃 버튼 추가
       const message_area = document.getElementById("message");
       message_area.innerHTML = `${naverLogin.user.name}님`;
@@ -47,6 +68,15 @@ window.addEventListener("load", function () {
       logout.addEventListener("click", (e) => {
         naverLogin.logout();
         location.replace("https://planet-point.netlify.app/");
+=======
+            //로그아웃 버튼 누르면 로그아웃
+            const logout = document.getElementById('btn_logout');
+            logout.addEventListener('click', (e)=> {
+              naverLogin.logout();
+              location.replace("https://planet-point.netlify.app/");
+            });
+        }
+>>>>>>> 347208485c2ca7c8a5837a501ea23bdb9a6aa76e
       });
     }
   });
