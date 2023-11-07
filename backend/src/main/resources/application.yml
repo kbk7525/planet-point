@@ -16,8 +16,8 @@ payment:
   toss:
     test_client_key: "test_ck_6BYq7GWPVv5DRddeYNn3NE5vbo1d"
     test_secret_key: "test_sk_eqRGgYO1r5qOd0v64nWrQnN2Eyaz"
-    success_url: "http://127.0.0.1:8080/success.html"
-    fail_url: "http://127.0.0.1:8080/fail.html"
+    success_url: "https://planet-point.netlify.app//success.html"
+    fail_url: "https://planet-point.netlify.app//fail.html"
     origin_url: "https://api.tosspayments.com/v1"
 
 server:

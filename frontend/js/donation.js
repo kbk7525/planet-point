@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   printSeed();
   const data = localStorage.getItem("com.naver.nid.access_token");
   const token = data.split("bearer.")[1].split(".")[0];
-  fetch("http://planet-point.ap-northeast-2.elasticbeanstalk.com/token", {
+  fetch("https://planet-point.shop/token", {
     method: "POST",
     headers: {
       "Content-Type": "text/plain",
@@ -29,11 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function increaseSeed(elementId) {
   if (elementId == 1 || elementId == 2 || elementId == 3) {
     cnt = 100;
-  } else {
-    cnt = 100;
   }
   fetch(
-    `http://planet-point.ap-northeast-2.elasticbeanstalk.com/donation/increase?elementId=${elementId}&cnt=${cnt}`,
+    `https://planet-point.shop/donation/increase?elementId=${elementId}&cnt=${cnt}`,
     {
       method: "POST",
     }
@@ -70,11 +68,9 @@ function decreaseSeed(userEmail) {
         clickElement.id == 3
       ) {
         cnt = 100;
-      } else {
-        cnt = 100;
       }
       fetch(
-        `http://planet-point.ap-northeast-2.elasticbeanstalk.com/donation/decrease?email=${userEmail}&cnt=${cnt}`,
+        `https://planet-point.shop/donation/decrease?email=${userEmail}&cnt=${cnt}`,
         {
           method: "POST",
         }
@@ -113,7 +109,7 @@ function printSeed() {
   const elements = document.querySelectorAll(".donation-progress");
   elements.forEach((element) => {
     const elementId = element.id.replace("progress-", "");
-    fetch(`http://planet-point.ap-northeast-2.elasticbeanstalk.com/donation/print/${elementId}`)
+    fetch(`https://planet-point.shop/donation/print/${elementId}`)
       .then((response) => {
         if (response.ok) {
           return response.json();

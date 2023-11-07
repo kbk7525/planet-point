@@ -2,7 +2,7 @@ let userEmail;
 document.addEventListener("DOMContentLoaded", function () {
   const data = localStorage.getItem('com.naver.nid.access_token');
   const token = data.split("bearer.")[1].split(".")[0];
-  fetch('http://planet-point.ap-northeast-2.elasticbeanstalk.com/token', {
+  fetch('https://planet-point.shop/token', {
     method: 'POST',
     headers: {
       'Content-Type': 'text/plain',
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(error);
     })
   function donationInfo(userEmail) {
-    fetch(`http://planet-point.ap-northeast-2.elasticbeanstalk.com/v1/api/payments/all?email=${userEmail}`)
+    fetch(`https://planet-point.shop/v1/api/payments/all?email=${userEmail}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

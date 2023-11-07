@@ -1,7 +1,7 @@
 let naverLogin = new naver.LoginWithNaverId(
   {
     clientId: "RVvWO7R3QM1UnNRS0fnv",
-    callbackUrl: "http://127.0.0.1:8080",
+    callbackUrl: "https://planet-point.netlify.app/",
     isPopup: false,
     loginButton: {color: "green", type: 2, height: 30}
   }
@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
             name: name,
             mobile: mobile
           }
-          fetch('http://planet-point.ap-northeast-2.elasticbeanstalk.com/save', {
+          fetch('https://planet-point.shop//save', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8;',
@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
             const logout = document.getElementById('btn_logout');
             logout.addEventListener('click', (e)=> {
               naverLogin.logout();
-              location.replace("http://127.0.0.1:8080");
+              location.replace("https://planet-point.netlify.app/");
             });
         }
       });
