@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
             name: name,
             mobile: mobile
           }
-          fetch('https://planet-point.shop//save', {
+          fetch('https://planet-point.shop/save', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8;',
