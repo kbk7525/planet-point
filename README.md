@@ -31,7 +31,7 @@ PLANET-POINT
 ### ✔️Back-end
 <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=yellow"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=Spring Boot&logoColor=yellow"><img src="https://img.shields.io/badge/amazonrds-527FFF?style=for-the-badge&logo=amazonrds&logoColor=yellow"><img src="https://img.shields.io/badge/amazonec2-00C7B7?style=for-the-badge&logo=amazonec2&logoColor=yellow">
 
-### ✔️API
+### ✔️API TEST
 <img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=yellow">
 
 ### ✔️Library
