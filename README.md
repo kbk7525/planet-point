@@ -18,8 +18,8 @@ PLANET-POINT
     <tr>
       <td align="center"><sub><b>플래닛포인트 팀장 : 김광호 </b></sub><br /></td>
       <td align="center"><sub><b>플래닛포인트 팀원 : 김도현</b></sub><br /></td>
-      <td align="center"><sub><b> 플래닛포인트 : 강병규</b></sub><br /></td>
-      <td align="center"><sub><b> 플래닛포인트 :  김유진</b></sub><br /></td>
+      <td align="center"><sub><b> 플래닛포인트 팀원 : 강병규</b></sub><br /></td>
+      <td align="center"><sub><b> 플래닛포인트 팀원 :  김유진</b></sub><br /></td>
      <tr/>
    
   </tbody>
