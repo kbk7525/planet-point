@@ -1,7 +1,7 @@
 let userEmail;
 
 document.addEventListener("DOMContentLoaded", function () {
-  const data = localStorage.getItem('com.naver.nid.access_token');
+  const data = localStorage.getItem("com.naver.nid.access_token");
   let isHidden = getCookie("badgeHidden");
   const badge = document.querySelector(".badges");
   if (isHidden === "true") {
@@ -33,99 +33,100 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (data) {
     const token = data.split("bearer.")[1].split(".")[0];
-    fetch('https://planet-point.shop/token', {
-      method: 'POST',
+    fetch("https://planet-point.shop/token", {
+      method: "POST",
       headers: {
-        'Content-Type': 'text/plain',
+        "Content-Type": "text/plain",
       },
       body: token,
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
           return response.text();
         }
         const links = document.querySelectorAll(".check_login");
-        links.forEach(link => {
-          link.addEventListener('click', function (e) {
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
             if (userEmail === null || userEmail === undefined) {
               e.preventDefault();
-              alert('로그인이 필요한 서비스입니다.');
-              window.location.href = 'index.html';
+              alert("로그인이 필요한 서비스입니다.");
+              window.location.href = "index.html";
             }
           });
         });
-        badge.addEventListener('click', function (e) {
+        badge.addEventListener("click", function (e) {
           if (userEmail === null || userEmail === undefined) {
             e.preventDefault();
-            alert('로그인이 필요한 서비스입니다.');
-            window.location.href = 'index.html';
-          } 
+            alert("로그인이 필요한 서비스입니다.");
+            window.location.href = "index.html";
+          }
         });
-        throw new Error('통신 실패');
+        throw new Error("통신 실패");
       })
-      .then(data => {
+      .then((data) => {
         userEmail = data;
         const isLogIn = checkLogin(userEmail);
         const links = document.querySelectorAll(".check_login");
-        links.forEach(link => {
-          link.addEventListener('click', function (e) {
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
             if (!isLogIn) {
               e.preventDefault();
-              alert('로그인이 필요한 서비스입니다.');
-              window.location.href = 'index.html';
+              alert("로그인이 필요한 서비스입니다.");
+              window.location.href = "index.html";
             }
           });
         });
 
-        badge.addEventListener('click', function (e) {
+        badge.addEventListener("click", function (e) {
           if (!isLogIn) {
             e.preventDefault();
-            alert('로그인이 필요한 서비스입니다.');
-            window.location.href = 'index.html';
+            alert("로그인이 필요한 서비스입니다.");
+            window.location.href = "index.html";
           } else {
             setCookie("badgeHidden", "true", 1);
             badge.style.display = "none";
-            fetch(`https://planet-point.shop/increaseSeed?email=${userEmail}&cnt=100`, {
-              method: 'POST',
-            })
-              .then(response => {
+            fetch(
+              `https://planet-point.shop/increaseSeed?email=${userEmail}&cnt=100`,
+              {
+                method: "POST",
+              }
+            )
+              .then((response) => {
                 if (response.ok) {
                   return response.text();
                 }
-                throw new Error('씨앗 증가 요청 실패');
+                throw new Error("씨앗 증가 요청 실패");
               })
-              .then(data => {
-                console.log(data); 
+              .then((data) => {
+                console.log(data);
               })
-              .catch(error => {
+              .catch((error) => {
                 console.log(error);
               });
           }
         });
-        
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
-      })
-  }
-  else {
+      });
+  } else {
     const isLogIn = checkLogin(null);
     const links = document.querySelectorAll(".check_login");
     const badge = document.querySelector(".badges");
-    links.forEach(link => {
-      link.addEventListener('click', function (e) {
+    links.forEach((link) => {
+      link.addEventListener("click", function (e) {
         if (!isLogIn) {
           e.preventDefault();
-          alert('로그인이 필요한 서비스입니다.');
-          window.location.href = 'index.html';
+          alert("로그인이 필요한 서비스입니다.");
+          window.location.href = "index.html";
         }
       });
     });
-    badge.addEventListener('click', function (e) {
+    badge.addEventListener("click", function (e) {
       if (!isLogIn) {
         e.preventDefault();
-        alert('로그인이 필요한 서비스입니다.');
-        window.location.href = 'index.html';
+        alert("로그인이 필요한 서비스입니다.");
+        window.location.href = "index.html";
       }
     });
   }
@@ -134,8 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function checkLogin(userEmail) {
   if (userEmail !== null) {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
