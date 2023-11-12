@@ -16,10 +16,11 @@ PLANET-POINT
 <table>
   <tbody>
     <tr>
-      <td align="center"><sub><b>플래닛포인트 팀장 : 김광호 </b></sub><br /></td>
-      <td align="center"><sub><b>플래닛포인트 팀원 : 김도현</b></sub><br /></td>
-      <td align="center"><sub><b> 플래닛포인트 팀원 : 강병규</b></sub><br /></td>
-      <td align="center"><sub><b> 플래닛포인트 팀원 :  김유진</b></sub><br /></td>
+    <td align="center"><sub><b>플래닛포인트 팀장 : 김광호 </b></sub><br />[팀장/Front End/README작성]</td>
+<td align="center"><sub><b>플래닛포인트 팀원 : 김도현</b></sub><br />[Front End]</td>
+<td align="center"><sub><b> 플래닛포인트 팀원 : 강병규</b></sub><br />[Back End]</td>
+<td align="center"><sub><b> 플래닛포인트 팀원 :  김유진</b></sub><br />[Designer]</td>
+
      <tr/>
    
   </tbody>
@@ -31,8 +32,44 @@ PLANET-POINT
 ### ✔️Back-end
 <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=yellow"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=Spring Boot&logoColor=yellow"><img src="https://img.shields.io/badge/amazonrds-527FFF?style=for-the-badge&logo=amazonrds&logoColor=yellow"><img src="https://img.shields.io/badge/amazonec2-00C7B7?style=for-the-badge&logo=amazonec2&logoColor=yellow">
 
+
+
+
+
 ### ✔️API TEST
 <img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=yellow">
 
 ### ✔️Library
 <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=yellow"><img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=yellow"><img src="https://img.shields.io/badge/swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=yellow">
+
+### 내부 화면[메인페이지-타이틀]
+<img width="960" alt="image" src="https://github.com/planet-point/project/assets/128563719/9f7d29a6-e9c9-4e4f-a20b-35966ba9aaf4">
+
+### 내부 화면[메인페이지-소개]
+
+
+https://github.com/planet-point/project/assets/128563719/c2f507fb-b853-4dfe-af56-0a43a504873f
+
+
+<br>
+
+https://github.com/planet-point/project/assets/128563719/79c02fb2-4243-4f3f-b15c-1abc63e41724
+
+
+
+### 마이페이지 
+<img width="960" alt="image" src="https://github.com/planet-point/project/assets/128563719/3dc370b4-3312-4eed-93e8-72bae630ac7a"><br>
+참고사항: 개인정보는 숨김처리하였음 / 실제 페이지에선 구현 O <br><br>
+<b>후원내역 클릭시</b> <br>
+<img width="737" alt="image" src="https://github.com/planet-point/project/assets/128563719/fcc1793e-e0c6-42fe-8c61-d5977129a413">
+
+### 기부하기
+
+https://github.com/planet-point/project/assets/128563719/a02f6e36-db72-4e07-8aab-ea363ac1db64
+
+
+### 후원하기
+<img width="960" alt="image" src="https://github.com/planet-point/project/assets/128563719/6a3c2fed-d7bc-4598-ad15-80a7465ef504"><br>
+<img width="365" alt="image" src="https://github.com/planet-point/project/assets/128563719/ddb30ba3-1b00-4ba6-84a7-26469f69c491"><br>
+참고사항: 개인정보는 숨김처리하였음 / 실제 페이지에선 구현 O
+- 토스 API 사용
