@@ -15,13 +15,13 @@ PLANET-POINT
 
 <table>
   <tbody>
-    <tr>
-    <td align="center"><sub><b>플래닛포인트 팀장 : 김광호 </b></sub><br />[팀장/Front End/README작성]</td>
+    
+<td align="center"><sub><b>플래닛포인트 팀장 : 김광호 </b></sub><br />[팀장/Front End/README작성]</td>
 <td align="center"><sub><b>플래닛포인트 팀원 : 김도현</b></sub><br />[Front End]</td>
 <td align="center"><sub><b> 플래닛포인트 팀원 : 강병규</b></sub><br />[Back End]</td>
 <td align="center"><sub><b> 플래닛포인트 팀원 :  김유진</b></sub><br />[Designer]</td>
 
-     <tr/>
+
    
   </tbody>
 </table>
