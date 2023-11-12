@@ -14,12 +14,7 @@ function requestPayment() {
   let email = document.getElementById("email").value;
   let name = document.getElementById("name").value;
 
-<<<<<<< HEAD
-  let baseUrl =
-    "https://planet-point.ap-northeast-2.elasticbeanstalk.com/v1/api/payments";
-=======
-    let baseUrl = "https://planet-point.shop/v1/api/payments";
->>>>>>> 347208485c2ca7c8a5837a501ea23bdb9a6aa76e
+  let baseUrl = "https://planet-point.shop/v1/api/payments";
 
   //바꾸면 안됨
   let url =
