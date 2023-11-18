@@ -2710,9 +2710,10 @@ span:hover + p.arrow_box {
 .swiper-slide img {
   max-height: 100vh;
   min-height: 60vh;
-  width: auto;
+  width: 1000px;
   object-fit: cover;
 }
+
 .start {
   padding: 0; /* 섹션의 패딩을 제거합니다. */
   margin-top: 50px;
